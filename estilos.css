@@ -11,6 +11,7 @@ html {
   #header{
    background: rgba(255, 255, 255, 0.6); /* color semi-transparente */
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 
