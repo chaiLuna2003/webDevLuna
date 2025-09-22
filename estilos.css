@@ -5,3 +5,13 @@ html {
 #sobre-mi i{
     margin-bottom: 40px;
 }
+
+
+@media(max-width:760px){
+  #header{
+   background: rgba(255, 255, 255, 0.6); /* color semi-transparente */
+  backdrop-filter: blur(20px);
+}
+
+
+}
