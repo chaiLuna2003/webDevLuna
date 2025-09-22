@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio Angel Luna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="estilos.css" />
+    <!-- Font Awesome Free -->
+<!-- Font Awesome Free (sin integrity) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  </head>
+  <body>
+    <section
+      class="min-h-screen flex flex-col justify-center items-center bg-blue-900 text-white text-center px-6"
+    >
+      <!-- HEADER -->
+      <header
+        class="fixed top-0 left-0 w-full bg-blue-900 text-white shadow-md z-50"
+      >
+        <div
+          class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
+        >
+          <!-- Logo / Nombre -->
+          <a href="#" class="text-zinc-300 text-2xl font-bold">Angel Luna</a>
+
+          <!-- Navegación -->
+          <nav class="hidden md:flex space-x-6 font-mono">
+            <a href="#sobre-mi" class="hover:text-slate-300 transition"
+              >Sobre mí</a
+            >
+            <a href="#proyectos" class="hover:text-slate-300 transition"
+              >Proyectos</a
+            >
+            <a href="#contacto" class="hover:text-slate-300 transition"
+              >Contacto</a
+            >
+             <a href="#contacto" class="hover:text-slate-300 transition"
+              >Blog</a
+            >
+          </nav>
+
+          <!-- Botón menú móvil -->
+          <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+            ☰
+          </button>
+        </div>
+
+        <div
+          id="menu"
+          class="hidden flex flex-col md:hidden bg-blue-900 px-6 py-4 space-y-4"
+        >
+          <a href="#sobre-mi" class="hover:text-indigo-400 transition"
+            >Sobre mí</a
+          >
+          <a href="#proyectos" class="hover:text-indigo-400 transition"
+            >Proyectos</a
+          >
+          <a href="#contacto" class="hover:text-indigo-400 transition"
+            >Contacto</a
+          >
+           <a href="#contacto" class="hover:text-indigo-400 transition"
+            >Blog</a
+          >
+        </div>
+      </header>
+
+      <img
+        src="AngelLunaDev.jpg"
+        alt="Foto de Angel Luna"
+        class="w-40 h-40 rounded-full shadow-lg mb-6 border-4 border-indigo-500 object-cover"
+      />
+      <h1 class="text-zinc-300 text-5xl font-bold mb-4">
+        Hola, soy Angel Luna
+      </h1>
+      <p class="text-xl mb-6 font-mono">Desarrollador Web</p>
+    </section>
+
+    <!-- Seccion SOBRE MI--> 
+    <section
+      id="sobre-mi"
+      data-aos="fade-up"
+      class="min-h-screen flex flex-col justify-center items-center bg-gray-100 text-gray-900 px-6 py-16 text-center"
+    >
+    <i class="fa-solid fa-desktop"></i>
+      <h2 class="text-4xl font-bold mb-6">Sobre mí</h2>
+      <p
+        class="max-w-2xl text-lg leading-relaxed mb-10"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        Soy Angel Luna, un Desarrollador apasionado por el diseño web e interfaces intuitivas
+      </p>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // 1 segundo
+        easing: "ease-in-out",
+        once: true, // solo animar una vez
+      });
+    </script>
+  </body>
+</html>
