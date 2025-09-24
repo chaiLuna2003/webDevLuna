@@ -14,5 +14,24 @@ html {
   -webkit-backdrop-filter: blur(20px);
 }
 
-
 }
+
+
+.columns-about{
+  border: 1px solid #e8e3e3;
+   background: rgba(255, 255, 255, 0.2); /* color semi-transparente */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.columns-about {
+  transition: all 0.3s ease-in-out;
+}
+
+.columns-about:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos específicos */
+
+

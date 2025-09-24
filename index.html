@@ -12,19 +12,22 @@
     />
     <link rel="stylesheet" href="estilos.css" />
     <!-- Font Awesome Free -->
-<!-- Font Awesome Free (sin integrity) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
+    <!-- Font Awesome Free (sin integrity) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-
     <section
       class="min-h-screen flex flex-col justify-center items-center bg-blue-900 text-white text-center px-6"
     >
       <!-- HEADER -->
       <header
-        class="fixed top-2 left-6 right-6 bg-indigo-600 text-white shadow-md z-50 rounded-xl px-4 py-2" id="header"
+        class="fixed top-2 left-6 right-6 bg-indigo-600 text-white shadow-md z-50 rounded-xl px-4 py-2"
+        id="header"
       >
         <div
           class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
@@ -43,9 +46,7 @@
             <a href="#contacto" class="hover:text-slate-300 transition"
               >Contacto</a
             >
-             <a href="blog.html" class="hover:text-slate-300 transition"
-              >Blog</a
-            >
+            <a href="blog.html" class="hover:text-slate-300 transition">Blog</a>
           </nav>
 
           <!-- Botón menú móvil -->
@@ -56,7 +57,7 @@
 
         <div
           id="menu"
-          class="hidden flex flex-col md:hidden  px-6 py-4 space-y-4" 
+          class="hidden flex flex-col md:hidden px-6 py-4 space-y-4"
         >
           <a href="#sobre-mi" class="hover:text-indigo-400 transition"
             >Sobre mí</a
@@ -67,9 +68,7 @@
           <a href="#contacto" class="hover:text-indigo-400 transition"
             >Contacto</a
           >
-           <a href="blog.html" class="hover:text-indigo-400 transition"
-            >Blog</a
-          >
+          <a href="blog.html" class="hover:text-indigo-400 transition">Blog</a>
         </div>
       </header>
 
@@ -84,21 +83,43 @@
       <p class="text-xl mb-6 font-mono">Desarrollador Web</p>
     </section>
 
-    <!-- Seccion SOBRE MI --> 
+    <!-- Seccion SOBRE MI -->
     <section
       id="sobre-mi"
       data-aos="fade-up"
-      class="min-h-screen flex flex-col justify-center items-center bg-gray-100 text-gray-900 px-6 py-16 text-center"
+      class="grid grid-cols-1 md:grid-cols-2 gap-10 bg-blue-800 text-white px-6 sm:px-12 lg:px-32 py-32"
     >
-    <i class="fa-solid fa-desktop"></i>
-      <h2 class="text-4xl font-bold mb-6">Sobre mí</h2>
-      <p
-        class="max-w-2xl text-lg leading-relaxed mb-10"
-        data-aos="fade-up"
-        data-aos-delay="200"
+      <!-- Columna izquierda -->
+      <div
+        class="columns-about col-left flex flex-col justify-center items-center text-center px-6 sm:px-12 lg:px-24 py-6 sm:py-12 md:py-16 lg:py-20 rounded-xl"
       >
-        Soy Angel Luna, un Desarrollador apasionado por el diseño web e interfaces intuitivas
-      </p>
+        <i class="fa-solid fa-desktop text-5xl mb-4"></i>
+        <h2 class="text-4xl font-bold mb-6">Sobre mí</h2>
+        <p
+          class="max-w-2xl text-lg font-sans font-normal leading-relaxed"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Soy Angel Luna, un Desarrollador con más de 1 año de experiencia
+          profesional construyendo sitios web.
+        </p>
+      </div>
+
+      <!-- Columna derecha -->
+      <div
+        class="columns-about col-right flex flex-col justify-center items-center text-center px-6 sm:px-12 lg:px-24 py-6 sm:py-12 md:py-16 lg:py-20 rounded-xl"
+      >
+        <i class="fa-solid fa-laptop-code text-5xl mb-4"></i>
+        <h2 class="text-4xl font-bold mb-6">Tecnologias</h2>
+        <p
+          class="max-w-2xl text-lg font-sans font-normal leading-relaxed"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          He trabajado con tecnologías como PHP, WordPress, JavaScript y
+          Tailwind CSS para crear sitios modernos y funcionales.
+        </p>
+      </div>
     </section>
 
     <!--Seccion Proyectos -->
@@ -107,14 +128,15 @@
       data-aos="fade-up"
       class="min-h-screen flex flex-col justify-center items-center bg-indigo-800 text-gray-900 px-6 py-16 text-center"
     >
-    <i class="fa-solid fa-desktop"></i>
+      <i class="fa-solid fa-desktop"></i>
       <h2 class="text-4xl font-bold mb-6">Proyectos</h2>
       <p
         class="max-w-2xl text-lg leading-relaxed mb-10"
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        Soy Angel Luna, un Desarrollador apasionado por el diseño web e interfaces intuitivas
+        Soy Angel Luna, un Desarrollador apasionado por el diseño web e
+        interfaces intuitivas
       </p>
     </section>
 
@@ -124,14 +146,15 @@
       data-aos="fade-up"
       class="min-h-screen flex flex-col justify-center items-center bg-gray-100 text-gray-900 px-6 py-16 text-center"
     >
-    <i class="fa-solid fa-desktop"></i>
+      <i class="fa-solid fa-desktop"></i>
       <h2 class="text-4xl font-bold mb-6">Sobre mí</h2>
       <p
         class="max-w-2xl text-lg leading-relaxed mb-10"
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        Soy Angel Luna, un Desarrollador apasionado por el diseño web e interfaces intuitivas
+        Soy Angel Luna, un Desarrollador apasionado por el diseño web e
+        interfaces intuitivas
       </p>
     </section>
 
@@ -139,9 +162,9 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 1000, // 1 segundo
+        duration: 2000,
         easing: "ease-in-out",
-        once: true, // solo animar una vez
+        once: false,
       });
     </script>
   </body>
