@@ -37,7 +37,7 @@
 
           <!-- Navegación -->
           <nav class="hidden md:flex space-x-6 font-bold">
-            <a href="#sobre-mi" class="hover:text-slate-300 transition"
+            <a href="#about_me" class="hover:text-slate-300 transition"
               >Sobre mí</a
             >
             <a href="#proyectos" class="hover:text-slate-300 transition"
@@ -59,7 +59,7 @@
           id="menu"
           class="hidden flex flex-col md:hidden px-6 py-4 space-y-4"
         >
-          <a href="#sobre-mi" class="hover:text-indigo-400 transition"
+          <a href="#about_me" class="hover:text-indigo-400 transition"
             >Sobre mí</a
           >
           <a href="#proyectos" class="hover:text-indigo-400 transition"
@@ -84,79 +84,43 @@
     </section>
 
     <!-- Seccion SOBRE MI -->
+
     <section
-      id="sobre-mi"
+      id="about-me"
       data-aos="fade-up"
-      class="grid grid-cols-1 md:grid-cols-2 gap-10 bg-blue-800 text-white px-6 sm:px-12 lg:px-32 py-32"
+      class="sobre-mi bg-blue-900 text-white px-6 sm:px-12 lg:px-32 py-12 grid grid-cols-1 md:grid-cols-2 gap-8"
     >
-      <!-- Columna izquierda -->
-      <div
-        class="columns-about col-left flex flex-col justify-center items-center text-center px-6 sm:px-12 lg:px-24 py-6 sm:py-12 md:py-16 lg:py-20 rounded-xl"
-      >
-        <i class="fa-solid fa-desktop text-5xl mb-4"></i>
-        <h2 class="text-4xl font-bold mb-6">Sobre mí</h2>
-        <p
-          class="max-w-2xl text-lg font-sans font-normal leading-relaxed"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          Soy Angel Luna, un Desarrollador con más de 1 año de experiencia
-          profesional construyendo sitios web.
-        </p>
+      <div class="left-content-about flex items-center justify-center">
+        <ul class="list-none text-base/8 ">
+          <li class="font-medium text-slate-300"><span class="font-black">Lugar: </span>Estado de México</li>
+          <li class="font-medium text-slate-300"><span class="font-black">Telefono: </span>56 31644039 </li>
+          <li class="font-medium text-slate-300"><span class="font-black">Correo: </span> angelunagzl@outlook.com</li>
+          
+        </ul>
       </div>
 
-      <!-- Columna derecha -->
-      <div
-        class="columns-about col-right flex flex-col justify-center items-center text-center px-6 sm:px-12 lg:px-24 py-6 sm:py-12 md:py-16 lg:py-20 rounded-xl"
-      >
-        <i class="fa-solid fa-laptop-code text-5xl mb-4"></i>
-        <h2 class="text-4xl font-bold mb-6">Tecnologias</h2>
-        <p
-          class="max-w-2xl text-lg font-sans font-normal leading-relaxed"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          He trabajado con tecnologías como PHP, WordPress, JavaScript y
-          Tailwind CSS para crear sitios modernos y funcionales.
+      <div class="right-content-about flex flex-col justify-center">
+        <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
+        <p class="leading-relaxed mb-6">
+          Soy un Desarrollador Web con más de un año de experiencia en
+          proyectos desde cero. Especializado en ofrecer soluciones funcionales y en diseñar interfaces minimalistas e intuitivas. Motivado por el
+          aprendizaje continuo y por aportar valor en nuevos proyectos.
+          Recientemente me he enfocado en el desarrollo con WordPress,
+          adquiriendo amplia experiencia en la plataforma y en el uso de
+          diversos plugins. 
         </p>
+        <a
+          href="#contacto"
+          class="bg-indigo-600 hover:bg-green-600 px-4 py-2 rounded transition w-fit"
+        >
+          Contáctame
+        </a>
       </div>
     </section>
 
     <!--Seccion Proyectos -->
-    <section
-      id="proyectos"
-      data-aos="fade-up"
-      class="min-h-screen flex flex-col justify-center items-center bg-indigo-800 text-gray-900 px-6 py-16 text-center"
-    >
-      <i class="fa-solid fa-desktop"></i>
-      <h2 class="text-4xl font-bold mb-6">Proyectos</h2>
-      <p
-        class="max-w-2xl text-lg leading-relaxed mb-10"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        Soy Angel Luna, un Desarrollador apasionado por el diseño web e
-        interfaces intuitivas
-      </p>
-    </section>
 
     <!-- Seccion contacto-->
-    <section
-      id="contacto"
-      data-aos="fade-up"
-      class="min-h-screen flex flex-col justify-center items-center bg-gray-100 text-gray-900 px-6 py-16 text-center"
-    >
-      <i class="fa-solid fa-desktop"></i>
-      <h2 class="text-4xl font-bold mb-6">Sobre mí</h2>
-      <p
-        class="max-w-2xl text-lg leading-relaxed mb-10"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        Soy Angel Luna, un Desarrollador apasionado por el diseño web e
-        interfaces intuitivas
-      </p>
-    </section>
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -164,7 +128,7 @@
       AOS.init({
         duration: 2000,
         easing: "ease-in-out",
-        once: false,
+        once: true,
       });
     </script>
   </body>
