@@ -32,4 +32,12 @@ html {
   transform: scale(1.05);
 }
 
+.proyectos {
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px); /* Safari */
+  background-color: rgba(243, 244, 246, 0.7); /* gris claro semi-transparente */
+  border: 2px solid #bfdbfe; /* border-blue-50 */
+  border-radius: 1rem;
+  box-shadow: inset;
+}
 
