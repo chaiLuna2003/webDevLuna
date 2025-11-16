@@ -42,3 +42,35 @@ html {
   
 }
 
+.proyect-list ul{
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(23, 35, 29);
+padding-bottom: 4px;
+padding-top: 4px;
+font-weight: 700;
+}
+
+.proyect-list li{
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(23, 35, 29);
+padding-bottom: 2px;
+padding-top: 2px;
+font-weight: 500;
+}
+
+.proyect-list p{
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(59, 79, 69);
+font-size: 12px;
+padding-bottom: 2px;
+padding-top: 2px;
+font-weight: 300;
+}
+
+@media(max-width: 1200px){
+
+.proyect-list{
+display: none;
+}
+
+}
