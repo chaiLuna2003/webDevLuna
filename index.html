@@ -21,6 +21,7 @@
     />
   </head>
   <body>
+
     <section
       class="min-h-screen flex flex-col justify-center items-center bg-blue-900 text-white text-center px-6"
     >
@@ -30,7 +31,7 @@
         id="header"
       >
         <div
-          class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
+          class="max-w-6xl mx-auto px-2 py-4 flex items-center justify-between"
         >
           <!-- Logo / Nombre -->
           <a href="#" class="text-zinc-300 text-2xl font-bold">Angel Luna</a>
@@ -47,6 +48,8 @@
               >Contacto</a
             >
             <a href="blog.html" class="hover:text-slate-300 transition">Blog</a>
+
+            <a href="en/home.html" class="hover:text-slate-300 transition">English</a>
           </nav>
 
           <!-- Botón menú móvil -->
@@ -69,6 +72,8 @@
             >Contacto</a
           >
           <a href="blog.html" class="hover:text-indigo-400 transition">Blog</a>
+
+          <a href="en/home.html" class="hover:text-slate-300 transition">English</a>
         </div>
       </header>
 
@@ -92,27 +97,12 @@
       <section
         id="about-me"
         data-aos="fade-up"
-        class="sobre-mi border-2 shadow-2xl/30 border-blue-50 border-solid p-6 bg-blue-900 text-white p-8 grid grid-cols-1 md:grid-cols-2 gap-8 rounded-2xl shadow-lg"
+        class="sobre-mi p-12 bg-white/10 backdrop-blur-md backdrop-saturate-150 text-white border border-white/20 rounded-2xl shadow-xl shadow-black/40 grid gap-8"
       >
-        <div
-          class="left-content-about flex items-center justify-start "
-        >
-          <ul class="list-none text-base/8">
-            <li class="font-medium text-slate-300">
-              <span class="font-black">Lugar: </span>Estado de México
-            </li>
-            <li class="font-medium text-slate-300">
-              <span class="font-black">Teléfono: </span>56 3164 4039
-            </li>
-            <li class="font-medium text-slate-300">
-              <span class="font-black">Correo: </span> angelunagzl@outlook.com
-            </li>
-          </ul>
-        </div>
-
+      <!--Sobre mi -->
         <div class="right-content-about flex flex-col justify-center">
-          <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
-          <p class="leading-relaxed mb-6">
+          <h2 class="text-3xl text-slate-950 font-bold mb-4">Sobre mí</h2>
+          <p class="leading-relaxed text-gray-700 mb-6">
             Soy un Desarrollador Web con más de un año de experiencia en
             proyectos desde cero. Especializado en ofrecer soluciones
             funcionales y en diseñar interfaces minimalistas e intuitivas.
@@ -121,28 +111,26 @@
             WordPress, adquiriendo amplia experiencia en la plataforma y en el
             uso de diversos plugins.
           </p>
-          <a
-            href="#contacto"
-            class="bg-indigo-600 hover:bg-indigo-800 hover:text px-4 py-2 rounded transition w-fit"
-          >
-            Contáctame
-          </a>
         </div>
 
+        <!--Educación -->
         <div class="right-content-about flex flex-col justify-center">
-          <h2 class="text-3xl font-bold mb-4">Eduación</h2>
-          <p class="leading-relaxed mb-6">
-            Soy un Desarrollador Web con más de un año de experiencia en
-            proyectos desde cero. Especializado en ofrecer soluciones
-            funcionales y en diseñar interfaces minimalistas e intuitivas.
-            Motivado por el aprendizaje continuo y por aportar valor en nuevos
-            proyectos. Recientemente me he enfocado en el desarrollo con
-            WordPress, adquiriendo amplia experiencia en la plataforma y en el
-            uso de diversos plugins.
+          <h2 class="text-3xl text-slate-950 font-bold mb-4">Eduación</h2>
+          <p class="leading-relaxed  text-gray-700 mb-6">
+            Egrese de la carrera Tecnico Superior Universitario en Desarrollo de Software Multiplataforma en el año 2025 
+            donde actualmente me encuentro en espera de mi titulo profesional.
+            A lo largo de mi paso por la carrera me permiti desarrollar muchas habilidades que me ayudaron a conseguir mi primer
+            empleo remoto donde...
+            <ul class="text-gray-700">
+              <li>iParking</li>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem deleniti id laudantium est? Cum deleniti minima, sequi sit ducimus porro neque! Aut officia dolorem dolorum numquam inventore corporis molestiae reprehenderit?
+              Veniam, saepe ipsam dolorum possimus, nisi iste amet, recusandae expedita unde laboriosam quaerat harum ducimus asperiores magni. Eaque suscipit quaerat perferendis quasi ea doloremque praesentium ipsa alias. Atque, qui laborum!</p>
+            </ul>
           </p>
-          
+          <p class="text-zinc-950 text-sm mt-6">
+            Ultima Actualización -20/11/2025-
+          </p>
         </div>
-
       </section>
     </section>
 
@@ -152,36 +140,51 @@
       id="proyectos"
       class="bg-gray-100 py-10 px-6 md:py-16 md:px-12 lg:py-20 lg:px-20"
     >
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-20 items-start">
-
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-20">
         <!-- Columna Izquierda -->
-        <div class ="md:col-span-1">
-          <h1 class="text-3xl font-bold mb-4">Proyectos</h1>
-          <p class="leading-relaxed mb-6">
-            Los ejemplos presentados a continuación son una recopilación de
-            proyectos que he desarrollado a lo largo de mi trayectoria
-            profesional.
-          </p>
+        <div class="md:col-span-1 h-full flex flex-col justify-between">
+          <div>
+            <h1 class="text-3xl font-bold mb-4">Proyectos</h1>
+            <p class="leading-relaxed mb-6">
+              Los ejemplos presentados a continuación son una recopilación de
+              proyectos que he desarrollado a lo largo de mi trayectoria
+              profesional.
+            </p>
+          </div>
 
           <div class="proyect-list">
             <ul>
-            <li>SIMMSA</li><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolores officia quo facere nisi est deleniti magnam labore delectus corporis rerum, beatae omnis alias nulla obcaecati voluptas repudiandae cum hic!</p>
-            <li>The Computists</li><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolores officia quo facere nisi est deleniti magnam labore delectus corporis rerum, beatae omnis alias nulla obcaecati voluptas repudiandae cum hic!</p>
-            <li>Bioingredientes</li><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolores officia quo facere nisi est deleniti magnam labore delectus corporis rerum, beatae omnis alias nulla obcaecati voluptas repudiandae cum hic!</p>  
-          </ul>
+              <li>SIMMSA</li>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Quaerat dolores officia quo facere nisi est deleniti magnam
+                labore delectus corporis rerum, beatae omnis alias nulla
+                obcaecati voluptas repudiandae cum hic!
+              </p>
+              <li>Bioingredientes</li>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Quaerat dolores officia quo facere nisi est deleniti magnam
+                labore delectus corporis rerum, beatae omnis alias nulla
+                obcaecati voluptas repudiandae cum hic!
+              </p>
+              <li>The Computists</li>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Quaerat dolores officia quo facere nisi est deleniti magnam
+                labore delectus corporis rerum, beatae omnis alias nulla
+                obcaecati voluptas repudiandae cum hic!
+              </p>
+            </ul>
           </div>
-          
-
         </div>
 
         <!-- Columna Derecha: Cards -->
         <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-
           <!-- Card 1 -->
           <div
             data-aos="fade-up"
             class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
-            
           >
             <img
               src="simmsa.png"
@@ -206,7 +209,6 @@
           <div
             data-aos="fade-up"
             class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
-            
           >
             <img
               src="bioingredientes.png"
@@ -231,7 +233,6 @@
           <div
             data-aos="fade-up"
             class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
-            
           >
             <img
               src="thecomputists.png"
@@ -256,7 +257,6 @@
           <div
             data-aos="fade-up"
             class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
-            
           >
             <img
               src="thecomputists.png"
@@ -280,14 +280,11 @@
       </div>
     </section>
 
-
-
-
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 2000,
+        duration: 1500,
         easing: "ease-in-out",
         once: true,
       });
