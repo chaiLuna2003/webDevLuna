@@ -34,7 +34,9 @@
           class="max-w-6xl mx-auto px-2 py-4 flex items-center justify-between"
         >
           <!-- Logo / Nombre -->
-          <a href="#" class="text-zinc-300 text-2xl font-bold">Angel Luna</a>
+          <a href="#" class="text-black-300 md:text-whi te-300 text-2xl font-bold hover:opacity-80 transition-opacity">
+  Angel Luna
+</a>
 
           <!-- Navegación -->
           <nav class="hidden md:flex space-x-6 font-bold">
@@ -107,15 +109,20 @@
             proyectos desde cero. Especializado en ofrecer soluciones
             funcionales y en diseñar interfaces minimalistas e intuitivas.
             Motivado por el aprendizaje continuo y por aportar valor en nuevos
-            proyectos. Recientemente me he enfocado en el desarrollo con
+            proyectos. <span class=" text-gray-900 text ">Recientemente me he enfocado en el desarrollo con
             WordPress, adquiriendo amplia experiencia en la plataforma y en el
-            uso de diversos plugins.
+            uso de diversos plugins.</spam><a class="font-extrabold text-gray-600 hover:text-gray-800 cursor-pointer ver-mas-btn">
+  Ver más
+</a>
+
+
+
           </p>
         </div>
 
         <!--Educación -->
         <div class="right-content-about flex flex-col justify-center">
-          <h2 class="text-3xl text-slate-950 font-bold mb-4">Eduación</h2>
+          <h2 class="text-3xl text-slate-950 font-bold mb-4">Educación</h2>
           <p class="leading-relaxed  text-gray-700 mb-6">
             Egrese de la carrera Tecnico Superior Universitario en Desarrollo de Software Multiplataforma en el año 2025 
             donde actualmente me encuentro en espera de mi titulo profesional.
@@ -133,6 +140,44 @@
         </div>
       </section>
     </section>
+    <div id="miModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+  <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center">
+    <!-- Fondo oscuro -->
+    <div class="fixed inset-0 bg-black opacity-30"></div>
+    
+    <!-- Contenido del modal -->
+    <div class="relative inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle bg-white rounded-lg shadow-xl">
+      <!-- Botón cerrar -->
+      <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 cerrar-modal">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      
+      <!-- Título -->
+      <h3 class="text-lg font-medium leading-6 text-gray-900">
+        Desarrollo con <span class="font-extrabold">WordPress</span>
+      </h3>
+      
+      <!-- Contenido -->
+      <div class="mt-2">
+        <p class="text-sm text-gray-500">
+          A lo largo de mi tiempo trabajando con WordPress donde he aprendido a dominar herramientas como Elementor...
+        </p>
+      </div>
+      
+      <!-- Botones de acción -->
+      <div class="mt-4 flex justify-end space-x-3">
+        <button type="button" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md cerrar-modal">
+          Cancelar
+        </button>
+        <button type="button" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md">
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!--Seccion Proyectos -->
 
@@ -284,7 +329,7 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 1500,
+        duration: 100,
         easing: "ease-in-out",
         once: true,
       });
