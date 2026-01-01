@@ -17,12 +17,16 @@
 
 <body>
 
-  <section class="min-h-screen flex flex-col justify-center items-center bg-blue-900 text-white text-center px-6">
+  <section
+    class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-blue-900 to-indigo-900 text-white text-center px-6">
+
     <!-- HEADER -->
-    <header class="fixed top-2 left-6 right-6 bg-indigo-600 text-white shadow-md z-50 rounded-xl px-4 py-2" id="header">
+    <header
+      class="fixed top-4 left-6 right-6 backdrop-blur-md bg-white/10 border border-white/20 text-white z-50 rounded-2xl px-4 py-2">
+
       <div class="max-w-6xl mx-auto px-2 py-4 flex items-center justify-between">
         <!-- Logo / Nombre -->
-        <a href="#" class="text-black-300 md:text-whi te-300 text-2xl font-bold hover:opacity-80 transition-opacity">
+        <a href="#" class="text-white text-2xl font-bold hover:opacity-80 transition-opacity">
           Angel Luna
         </a>
 
@@ -52,12 +56,22 @@
       </div>
     </header>
 
-    <img src="AngelLunaDev.jpg" alt="Foto de Angel Luna"
+    <img src="AngeLunaDev.webp" alt="Foto de Angel Luna"
       class="w-40 h-40 rounded-full shadow-lg mb-6 border-4 border-indigo-900 object-cover" />
     <h1 class="text-zinc-300 text-5xl font-bold mb-4">
       Hola, soy Angel Luna
     </h1>
     <p class="text-xl mb-6 font-mono">Desarrollador Web</p>
+    <div class="flex gap-4 mt-6">
+      <a href="#proyectos" class="bg-white text-blue-900 px-6 py-2 rounded-xl font-semibold hover:scale-105 transition">
+        Ver proyectos
+      </a>
+      <a href="#contacto"
+        class="border border-white px-6 py-2 rounded-xl hover:bg-white hover:text-blue-900 transition">
+        Contáctame
+      </a>
+    </div>
+
   </section>
 
   <!-- Seccion SOBRE MI -->
@@ -69,19 +83,15 @@
       <div class="right-content-about flex flex-col justify-center">
         <h2 class="text-3xl text-slate-950 font-bold mb-4">Sobre mí</h2>
         <p class="leading-relaxed text-gray-700 mb-6">
-          Soy un Desarrollador Web con más de un año de experiencia en
-          proyectos desde cero. Especializado en ofrecer soluciones
-          funcionales y en diseñar interfaces minimalistas e intuitivas.
-          Motivado por el aprendizaje continuo y por aportar valor en nuevos
+          Desarrollador Web con experiencia en proyectos desde cero,
+          enfocado en interfaces limpias, funcionales y orientadas a negocio.
+          Especializado en WordPress, UI/UX y soluciones prácticas.
           proyectos. <span class=" text-gray-900 text ">Recientemente me he enfocado en el desarrollo con
             WordPress, adquiriendo amplia experiencia en la plataforma y en el
-            uso de diversos plugins.</spam><a
-              class="font-extrabold text-gray-600 hover:text-gray-800 cursor-pointer ver-mas-btn">
-              Ver más
-            </a>
-
-
-
+            uso de diversos plugins.</span><a
+            class="font-extrabold text-gray-600 hover:text-gray-800 cursor-pointer ver-mas-btn">
+            Ver más
+          </a>
         </p>
       </div>
 
@@ -94,8 +104,17 @@
           A lo largo de mi paso por la carrera me permiti desarrollar muchas habilidades que me ayudaron a conseguir mi
           primer
           empleo remoto donde...
-        <ul class="text-gray-700">
-          <li>iParking</li>
+        <ul class="text-gray-700 space-y-2 list-disc list-inside mb-6">
+          <li><span class="font-semibold">iParking</span> – Proyecto académico</li>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem deleniti id laudantium est? Cum deleniti
+            minima, sequi sit ducimus porro neque! Aut officia dolorem dolorum numquam inventore corporis molestiae
+            reprehenderit?
+            Veniam, saepe ipsam dolorum possimus, nisi iste amet, recusandae expedita unde laboriosam quaerat harum
+            ducimus asperiores magni. Eaque suscipit quaerat perferendis quasi ea doloremque praesentium ipsa alias.
+            Atque, qui laborum!</p>
+        </ul>
+        <ul class="text-gray-700 space-y-2  list-disc list-inside">
+          <li><span class="font-semibold">iParking</span> – Proyecto académico</li>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem deleniti id laudantium est? Cum deleniti
             minima, sequi sit ducimus porro neque! Aut officia dolorem dolorum numquam inventore corporis molestiae
             reprehenderit?
@@ -152,148 +171,299 @@
     </div>
   </div>
 
+  <!-- Seccion Stack Tech -->
+
+  <section id="skills" class="bg-gray-100 py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">
+        Stack & Habilidades
+      </h2>
+
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        Herramientas y tecnologías que utilizo para crear experiencias web
+        funcionales, limpias y orientadas a resultados.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+        <!-- Skill -->
+        <div class="flex flex-col items-center p-6 rounded-2xl border border-gray-200 hover:shadow-md transition">
+          <i class="fab fa-html5 text-4xl text-orange-500 mb-3"></i>
+          <span class="font-semibold text-gray-800">HTML5</span>
+        </div>
+
+        <div class="flex flex-col items-center p-6 rounded-2xl border border-gray-200 hover:shadow-md transition">
+          <i class="fab fa-css3-alt text-4xl text-blue-500 mb-3"></i>
+          <span class="font-semibold text-gray-800">CSS3</span>
+        </div>
+
+        <div class="flex flex-col items-center p-6 rounded-2xl border border-gray-200 hover:shadow-md transition">
+          <i class="fab fa-js text-4xl text-yellow-400 mb-3"></i>
+          <span class="font-semibold text-gray-800">JavaScript</span>
+        </div>
+
+        <div class="flex flex-col items-center p-6 rounded-2xl border border-gray-200 hover:shadow-md transition">
+          <i class="fab fa-wordpress text-4xl text-blue-700 mb-3"></i>
+          <span class="font-semibold text-gray-800">WordPress</span>
+        </div>
+
+        <div class="flex flex-col items-center p-6 rounded-2xl border border-gray-200 hover:shadow-md transition">
+          <span class="text-2xl font-bold mb-2">⚡</span>
+          <span class="font-semibold text-gray-800">Tailwind CSS</span>
+        </div>
+
+        <div class="flex flex-col items-center p-6 rounded-2xl border border-gray-200 hover:shadow-md transition">
+          <i class="fab fa-git-alt text-4xl text-red-500 mb-3"></i>
+          <span class="font-semibold text-gray-800">Git</span>
+        </div>
+
+        <div class="flex flex-col items-center p-6 rounded-2xl border border-gray-200 hover:shadow-md transition">
+          <span class="text-2xl font-bold mb-2">🧠</span>
+          <span class="font-semibold text-gray-800">UI / UX</span>
+        </div>
+
+        <div class="flex flex-col items-center p-6 rounded-2xl border border-gray-200 hover:shadow-md transition">
+          <span class="text-2xl font-bold mb-2">🚀</span>
+          <span class="font-semibold text-gray-800">SEO básico</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
   <!--Seccion Proyectos -->
 
   <section id="proyectos" class="bg-gray-100 py-10 px-6 md:py-16 md:px-12 lg:py-20 lg:px-20">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-20">
-      <!-- Columna Izquierda -->
-      <div class="md:col-span-1 h-full flex flex-col justify-between">
-        <div>
-          <h1 class="text-3xl font-bold mb-4">Proyectos</h1>
-          <p class="leading-relaxed mb-6">
-            Los ejemplos presentados a continuación son una recopilación de
-            proyectos que he desarrollado a lo largo de mi trayectoria
-            profesional.
-          </p>
-        </div>
-
-        <div class="proyect-list">
-          <ul>
-            <li>SIMMSA</li>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Quaerat dolores officia quo facere nisi est deleniti magnam
-              labore delectus corporis rerum, beatae omnis alias nulla
-              obcaecati voluptas repudiandae cum hic!
-            </p>
-            <li>Bioingredientes</li>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Quaerat dolores officia quo facere nisi est deleniti magnam
-              labore delectus corporis rerum, beatae omnis alias nulla
-              obcaecati voluptas repudiandae cum hic!
-            </p>
-            <li>The Computists</li>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Quaerat dolores officia quo facere nisi est deleniti magnam
-              labore delectus corporis rerum, beatae omnis alias nulla
-              obcaecati voluptas repudiandae cum hic!
-            </p>
-          </ul>
-        </div>
-      </div>
+    <div class=" md:grid-cols-4 gap-20">
+      <h2 class="text-3xl font-bold text-slate-900 mt-4 text-center">
+        Proyectos Realizados
+      </h2>
+      
 
       <!-- Columna Derecha: Cards -->
-      <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <!-- Card 1 -->
-        <div data-aos="fade-up"
-          class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
-          <img src="simmsa.png" alt="Proyecto de estadias" class="w-full h-48 object-cover" />
+
+      <div class="md:col-span-3  grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+        <!-- Card 1 Proyecto Destacado -->
+        <div class="border-2 border-blue-600 rounded-2xl bg-white p-2 overflow-hidden
+       transition-all duration-300
+       hover:-translate-y-1 hover:shadow-xl">
+          <span class="text-xs font-semibold text-blue-600">Proyecto destacado</span>
+
+          <img src="simmsa.png" alt="Proyecto de estadias" class="w-full h-48 object-cover rounded-lg border-2 " />
           <div class="p-4">
-            <h3 class="text-lg font-semibold mb-2">SIMMSA</h3>
-            <p class="text-gray-600 text-sm mb-4">
-              Desarrollado con <span class="font-extrabold">WordPress</span>
+            <h3 class="text-xl font-bold mt-2">SIMMSA</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              Sitio corporativo enfocado en mejorar presencia digital
+              y captación de clientes.
             </p>
-            <a href="#"
-              class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-xl hover:bg-blue-700 transition-colors">
-              Ver proyecto
-            </a>
+
+            <button class="text-sm text-blue-600 hover:underline ver-detalle-btn">
+              Ver detalles
+            </button>
+
           </div>
         </div>
 
         <!-- Card 2 -->
-        <div data-aos="fade-up"
-          class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
-          <img src="bioingredientes.png" alt="Sitio para cliente de farmaceutica" class="w-full h-48 object-cover" />
+        <div data-aos="fade-up" class="bg-white p-2 shadow-lg rounded-2xl overflow-hidden
+       transition-all duration-300
+       hover:-translate-y-1 hover:shadow-xl">
+
+          <img src="bioingredientes.png" alt="Sitio para cliente de farmaceutica"
+            class="w-full h-48 object-cover rounded-lg " />
+
+
+
+
           <div class="p-4">
             <h3 class="text-lg font-semibold mb-2">Bioingredientes</h3>
-            <p class="text-gray-600 text-sm mb-4">
-              Desarrollado con <span class="font-extrabold">WordPress</span>
+
+            <div class="flex gap-2 flex-wrap mb-3">
+              <span class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-600">
+                WordPress
+              </span>
+              <span class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-600">
+                Landing
+              </span>
+              <span class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-600">
+                Corporativo
+              </span>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              Sitio corporativo enfocado en mejorar presencia digital
+              y captación de clientes.
             </p>
-            <a href="#"
-              class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-xl hover:bg-blue-700 transition-colors">
-              Ver proyecto
-            </a>
+            <button class="text-sm text-blue-600 hover:underline ver-detalle-btn">
+              Ver detalles
+            </button>
+
           </div>
         </div>
 
         <!-- Card 3 -->
         <div data-aos="fade-up"
-          class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
-          <img src="thecomputists.png" alt="Segundo proyecto de estadia" class="w-full h-48 object-cover" />
+          class="bg-white p-2 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
+
+          <img src="bioingredientes.png" alt="Sitio para cliente de farmaceutica"
+            class="w-full h-48 object-cover rounded-lg" />
+
+
+
+
           <div class="p-4">
-            <h3 class="text-lg font-semibold mb-2">The Computists</h3>
-            <p class="text-gray-600 text-sm mb-4">
-              Desarrollado con <span class="font-extrabold">WordPress</span>
+            <h3 class="text-lg font-semibold mb-2">Bioingredientes</h3>
+
+            <div class="flex gap-2 flex-wrap mb-3">
+              <span class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-600">
+                WordPress
+              </span>
+              <span class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-600">
+                Landing
+              </span>
+              <span class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-600">
+                Corporativo
+              </span>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              Sitio corporativo enfocado en mejorar presencia digital
+              y captación de clientes.
             </p>
-            <a href="#"
-              class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-xl hover:bg-blue-700 transition-colors">
-              Ver proyecto
-            </a>
+            <button class="text-sm text-blue-600 hover:underline ver-detalle-btn">
+              Ver detalles
+            </button>
+
           </div>
         </div>
 
         <!-- Card 4 -->
         <div data-aos="fade-up"
-          class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
-          <img src="thecomputists.png" alt="Proyecto 1" class="w-full h-48 object-cover" />
+          class="bg-white p-2 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
+
+          <img src="bioingredientes.png" alt="Sitio para cliente de farmaceutica"
+            class="w-full h-48 object-cover rounded-lg" />
+
+
+
+
           <div class="p-4">
-            <h3 class="text-lg font-semibold mb-2">Hasta Capital</h3>
-            <p class="text-gray-600 text-sm mb-4">
-              Desarrollado con <span class="font-extrabold">WordPress</span>
+            <h3 class="text-lg font-semibold mb-2">Bioingredientes</h3>
+
+            <div class="flex gap-2 flex-wrap mb-3">
+              <span class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-600">
+                WordPress
+              </span>
+              <span class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-600">
+                Landing
+              </span>
+              <span class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-600">
+                Corporativo
+              </span>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">
+              Sitio corporativo enfocado en mejorar presencia digital
+              y captación de clientes.
             </p>
-            <a href="#"
-              class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-xl hover:bg-blue-700 transition-colors">
-              Ver proyecto
-            </a>
+            <button class="text-sm text-blue-600 hover:underline ver-detalle-btn">
+              Ver detalles
+            </button>
+
           </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modal Section -->
+
+    <div id="modaldetail" class="fixed inset-0 z-50 hidden overflow-y-auto">
+    <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center">
+      <!-- Fondo oscuro -->
+      <div class="fixed inset-0 bg-black opacity-30"></div>
+
+      <!-- Contenido del modal -->
+      <div
+        class="relative inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle bg-white rounded-lg shadow-xl">
+        <!-- Botón cerrar -->
+        <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 cerrar-modal">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <!-- Título -->
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          Desarrollo con <span class="font-extrabold">WordPress y Elementor</span>
+        </h3>
+
+        <!-- Contenido -->
+        <div class="mt-2">
+          <p class="text-sm text-gray-500">
+            A lo largo de mi tiempo trabajando con WordPress donde he aprendido a dominar herramientas como Elementor...
+          </p>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="mt-4 flex justify-end space-x-3">
+          <button type="button"
+            class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md cerrar-modal">
+            Cerrar
+          </button>
+          <button type="button"
+            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md">
+            Visitar Web
+          </button>
         </div>
       </div>
     </div>
+  </div>
+
   </section>
 
-  <footer class="w-full bg-gray-100 text-gray-300 py-10 px-6">
-    <div class="max-w-5xl mx-auto flex flex-col items-center space-y-6">
+  <footer id="contacto" class="bg-gray-100 py-12 px-6">
+    <div class="max-w-5xl mx-auto flex flex-col items-center space-y-6 text-center">
 
-      <!-- Tu nombre o marca -->
-      <h2 class="text-2xl font-semibold text-slate-950 tracking-wide">
-        Chai Dev
+      <!-- Nombre -->
+      <h2 class="text-2xl font-bold text-slate-900">
+        Angel Luna
       </h2>
 
-      <!-- Links importantes -->
-      <nav class="flex flex-wrap text-slate-950 justify-center gap-6 text-sm">
-        <a href="#about" class="hover:text-white transition">Sobre mí</a>
-        <a href="#projects" class="hover:text-white transition">Proyectos</a>
-        <a href="#skills" class="hover:text-white transition">Skills</a>
-        <a href="#contact" class="hover:text-white transition">Contacto</a>
+      <p class="text-gray-600 text-sm max-w-md">
+        Desarrollador Web enfocado en crear soluciones funcionales,
+        minimalistas y orientadas a negocio.
+      </p>
+
+      <!-- Navegación -->
+      <nav class="flex flex-wrap justify-center gap-6 text-sm text-gray-700">
+        <a href="#about_me" class="hover:text-blue-600 transition">Sobre mí</a>
+        <a href="#proyectos" class="hover:text-blue-600 transition">Proyectos</a>
+        <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+        <a href="mailto:angelunagzl@outlook.com" class="hover:text-blue-600 transition">Contacto</a>
       </nav>
 
       <!-- Redes -->
-      <div class="flex space-x-5 text-xl">
-        <a href="#" class="hover:text-slate-950 transition">🐦</a>
-        <a href="#" class="hover:text-slate-950 transition">📸</a>
-        <a href="#" class="hover:text-slate-950 transition">💼</a>
-        <a href="#" class="hover:text-slate-950 transition">🌐</a>
+      <div class="flex space-x-5 text-xl text-gray-700">
+        <a href="#" class="hover:text-black transition">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="hover:text-blue-700 transition">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="hover:text-blue-500 transition">
+          <i class="fab fa-twitter"></i>
+        </a>
       </div>
 
       <!-- Línea -->
-      <div class="w-full border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
-        © 2025 Chai. Portafolio creado con amor, café y mucho código.
+      <div class="w-full border-t border-gray-300 pt-6 text-sm text-gray-500">
+        ©2026 Angel Luna · Ultima actualización 01 / 01 / 2026
       </div>
 
     </div>
   </footer>
+
 
 
   <script src="script.js"></script>

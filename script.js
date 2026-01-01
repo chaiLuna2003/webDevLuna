@@ -1,44 +1,63 @@
 const menuBtn = document.getElementById('menu-btn');
 const menu = document.getElementById('menu');
 
-menuBtn.addEventListener('click', () => {
+menuBtn?.addEventListener('click', () => {
   menu.classList.toggle('hidden');
 });
 
-
-// Seleccionar elementos
+// Botones
 const verMasBtn = document.querySelector('.ver-mas-btn');
-const modal = document.getElementById('miModal');
-const cerrarBtns = document.querySelectorAll('.cerrar-modal');
-const fondoModal = modal.querySelector('.fixed.inset-0.bg-black');
+const verDetalleBtn = document.querySelector('.ver-detalle-btn');
 
-// Abrir modal
-verMasBtn.addEventListener('click', (e) => {
-  e.preventDefault();
+// Modales
+const modal = document.getElementById('miModal');
+const modalDetail = document.getElementById('modaldetail');
+
+// Fondos
+const backdropModal = modal?.querySelector('.modal-backdrop');
+const backdropDetail = modalDetail?.querySelector('.modal-backdrop');
+
+// Botones cerrar
+const cerrarBtns = document.querySelectorAll('.cerrar-modal');
+
+// Funciones reutilizables
+const abrirModal = (modal) => {
   modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden'; // Evitar scroll
+  document.body.style.overflow = 'hidden';
+};
+
+const cerrarModal = (modal) => {
+  modal.classList.add('hidden');
+  document.body.style.overflow = 'auto';
+};
+
+// Abrir
+verMasBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
+  abrirModal(modal);
 });
 
-// Cerrar modal
+verDetalleBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
+  abrirModal(modalDetail);
+});
+
+// Cerrar botones
 cerrarBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
+    cerrarModal(modal);
+    cerrarModal(modalDetail);
   });
 });
 
-// Cerrar al hacer clic fuera del contenido
-fondoModal.addEventListener('click', () => {
-  modal.classList.add('hidden');
-  document.body.style.overflow = 'auto';
-});
+// Cerrar fondo
+backdropModal?.addEventListener('click', () => cerrarModal(modal));
+backdropDetail?.addEventListener('click', () => cerrarModal(modalDetail));
 
-// Cerrar con tecla ESC
+// ESC
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-    modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
+  if (e.key === 'Escape') {
+    cerrarModal(modal);
+    cerrarModal(modalDetail);
   }
 });
-
-document.addEventListener()
