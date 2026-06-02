@@ -14,9 +14,9 @@
             brand: {
               50: '#f5f3ff',
               100: '#ede9fe',
-              500: '#6366f1', // Indigo
+              500: '#6366f1',
               600: '#4f46e5',
-              950: '#090514'  // Fondo oscuro
+              950: '#090514'
             }
           }
         }
@@ -24,9 +24,7 @@
     }
   </script>
   <link rel="icon" type="image/png" href="favicon.png" />
-  <!-- Font Awesome para Iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -38,46 +36,62 @@
     .code-font {
       font-family: 'JetBrains Mono', monospace;
     }
-    /* Estilo de barra de navegación en scroll */
     .nav-scrolled {
-      background-color: rgba(9, 5, 20, 0.9);
+      background-color: rgba(9, 5, 20, 0.95);
       backdrop-filter: blur(12px);
       border-color: rgba(255, 255, 255, 0.08);
     }
-    /* Scrollbar estilizada */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #090514;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #27272a;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #4f46e5;
-    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #090514; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4f46e5; }
 
-    /* Transiciones para filtrado de proyectos */
     .project-card {
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    /* ANIMACIÓN SOLICITADA: Transición suave de tonos blancos */
     @keyframes whiteCycle {
-      0%, 100% {
-        color: #ffffff;
-      }
-      33% {
-        color: #f9f9f9;
-      }
-      66% {
-        color: #eeeeee;
-      }
+      0%, 100% { color: #ffffff; }
+      33% { color: #f9f9f9; }
+      66% { color: #eeeeee; }
     }
     .animate-white-cycle {
       animation: whiteCycle 5s ease-in-out infinite;
+    }
+
+    /* FIX MOBILE: Menú hamburguesa — asegura que el menú se vea por encima de todo */
+    #mobile-menu {
+      position: relative;
+      z-index: 60;
+    }
+
+    /* FIX MOBILE: Evita que el texto se desborde en pantallas pequeñas */
+    .code-font.text-lg {
+      font-size: clamp(0.85rem, 3.5vw, 1.125rem);
+    }
+
+    /* FIX MOBILE: Hero buttons no se compriman demasiado */
+    @media (max-width: 380px) {
+      .hero-btn { padding-left: 1.25rem; padding-right: 1.25rem; font-size: 0.75rem; }
+    }
+
+    /* FIX MOBILE: Filtros de proyectos con scroll horizontal si no caben */
+    .filter-bar {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .filter-bar::-webkit-scrollbar { display: none; }
+
+    /* FIX MOBILE: Tarjetas de contacto al 100% en móvil */
+    @media (max-width: 639px) {
+      .contact-link { width: 100%; }
+    }
+
+    /* FIX: Avatar badge no se sale del contenedor en mobile */
+    .avatar-wrapper {
+      position: relative;
+      display: inline-block;
     }
   </style>
 </head>
@@ -86,12 +100,12 @@
 
   <!-- ================= HEADER / NAVIGATION ================= -->
   <header id="main-nav" class="fixed top-4 left-4 right-4 z-50 rounded-2xl border border-white/5 bg-zinc-950/40 backdrop-blur-md transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
       
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-2 group">
+      <a href="#" class="flex items-center gap-2 group flex-shrink-0">
         <span class="code-font text-brand-500 font-bold text-xl">&lt;</span>
-        <span class="text-white text-lg font-bold tracking-tight group-hover:text-brand-500 transition-colors">Angel Luna</span>
+        <span class="text-white text-base sm:text-lg font-bold tracking-tight group-hover:text-brand-500 transition-colors">Angel Luna</span>
         <span class="code-font text-brand-500 font-bold text-xl">/&gt;</span>
       </a>
 
@@ -103,93 +117,103 @@
         <a href="#contacto" class="text-zinc-400 hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-brand-500 after:transition-all">Contacto</a>
       </nav>
 
-      <!-- Botones de Acción -->
+      <!-- Botones de Acción Escritorio -->
       <div class="hidden md:flex items-center gap-4">
         <a href="en/home.html" class="text-xs font-semibold px-3 py-1.5 rounded-lg border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition">EN</a>
         <a href="#contacto" class="text-xs font-semibold bg-white text-zinc-950 px-4 py-2 rounded-xl hover:bg-brand-500 hover:text-white transition-all duration-300">Hablemos</a>
       </div>
 
-      <!-- Menú Móvil Hamburger -->
-      <button id="menu-btn" aria-label="Abrir menú" class="md:hidden text-zinc-400 hover:text-white text-2xl focus:outline-none transition">
-        <i class="fa-solid fa-bars-staggered"></i>
-      </button>
+      <!-- FIX MOBILE: Grupo derecho del nav móvil (EN + hamburguesa) -->
+      <div class="flex md:hidden items-center gap-3">
+        <a href="en/home.html" class="text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-zinc-800 text-zinc-400 hover:text-white transition">EN</a>
+        <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" class="text-zinc-400 hover:text-white text-2xl focus:outline-none transition p-1">
+          <i id="menu-icon" class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
     </div>
 
     <!-- Menú Desplegable Móvil -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-zinc-950/95 px-6 py-6 rounded-b-2xl space-y-4">
-      <a href="#about_me" class="block text-zinc-300 hover:text-brand-500 font-medium py-2 transition-colors mobile-nav-link">Sobre mí</a>
-      <a href="#skills" class="block text-zinc-300 hover:text-brand-500 font-medium py-2 transition-colors mobile-nav-link">Stack & Habilidades</a>
-      <a href="#proyectos" class="block text-zinc-300 hover:text-brand-500 font-medium py-2 transition-colors mobile-nav-link">Proyectos realizados</a>
-      <a href="#contacto" class="block text-zinc-300 hover:text-brand-500 font-medium py-2 transition-colors mobile-nav-link">Contacto</a>
-      <div class="pt-4 border-t border-zinc-900 flex items-center justify-between">
-        <a href="en/home.html" class="text-sm font-semibold text-zinc-400 hover:text-white">English Version</a>
-        <a href="#contacto" class="text-xs font-semibold bg-brand-500 text-white px-4 py-2 rounded-xl mobile-nav-link">Contacto</a>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-zinc-950/98 px-6 py-6 rounded-b-2xl space-y-1">
+      <a href="#about_me" class="flex items-center gap-3 text-zinc-300 hover:text-brand-500 font-medium py-3 px-3 rounded-xl hover:bg-brand-500/5 transition-all mobile-nav-link">
+        <i class="fa-solid fa-user text-xs w-4 text-center text-brand-500/60"></i> Sobre mí
+      </a>
+      <a href="#skills" class="flex items-center gap-3 text-zinc-300 hover:text-brand-500 font-medium py-3 px-3 rounded-xl hover:bg-brand-500/5 transition-all mobile-nav-link">
+        <i class="fa-solid fa-code text-xs w-4 text-center text-brand-500/60"></i> Stack & Habilidades
+      </a>
+      <a href="#proyectos" class="flex items-center gap-3 text-zinc-300 hover:text-brand-500 font-medium py-3 px-3 rounded-xl hover:bg-brand-500/5 transition-all mobile-nav-link">
+        <i class="fa-solid fa-folder-open text-xs w-4 text-center text-brand-500/60"></i> Proyectos realizados
+      </a>
+      <a href="#contacto" class="flex items-center gap-3 text-zinc-300 hover:text-brand-500 font-medium py-3 px-3 rounded-xl hover:bg-brand-500/5 transition-all mobile-nav-link">
+        <i class="fa-solid fa-envelope text-xs w-4 text-center text-brand-500/60"></i> Contacto
+      </a>
+      <div class="pt-4 mt-2 border-t border-zinc-800/80">
+        <a href="#contacto" class="flex items-center justify-center gap-2 w-full text-sm font-semibold bg-brand-500 text-white px-4 py-3 rounded-xl mobile-nav-link hover:bg-brand-600 transition-colors">
+          <i class="fa-solid fa-paper-plane text-xs"></i> Hablemos
+        </a>
       </div>
     </div>
   </header>
 
 
   <!-- ================= HERO SECTION ================= -->
-  <section class="relative min-h-screen flex flex-col justify-center items-center bg-zinc-950 pt-28 px-6 overflow-hidden">
-    <!-- Fondos Gradientes de Luces -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none"></div>
-    <div class="absolute bottom-10 right-10 w-[300px] h-[300px] bg-sky-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+  <section class="relative min-h-screen flex flex-col justify-center items-center bg-zinc-950 pt-28 pb-16 px-4 sm:px-6 overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-sky-500/5 blur-[100px] rounded-full pointer-events-none"></div>
 
-    <div class="max-w-4xl mx-auto text-center flex flex-col items-center relative z-10">
+    <div class="max-w-4xl mx-auto text-center flex flex-col items-center relative z-10 w-full">
       
       <!-- Badge de Estado -->
       <div class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/20 text-brand-100 px-4 py-1.5 rounded-full text-xs font-medium mb-8">
-        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span> Disponible 
+        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse flex-shrink-0"></span>
+        <span>Disponible para nuevos proyectos</span>
       </div>
 
-      <!-- Avatar -->
-      <div class="relative mb-8 group">
+      <!-- Avatar — FIX MOBILE: badge reposicionado para no cortarse -->
+      <div class="avatar-wrapper mb-10">
         <div class="absolute inset-0 bg-brand-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-        <div class="relative w-36 h-36 rounded-full p-[2px] bg-gradient-to-tr from-brand-500 via-sky-400 to-transparent">
+        <div class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full p-[2px] bg-gradient-to-tr from-brand-500 via-sky-400 to-transparent group">
           <img src="AngelLuna.png" alt="Foto de Angel Luna" class="w-full h-full rounded-full object-cover bg-zinc-900" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1f2937/ffffff?text=AL';" />
         </div>
-        <div class="absolute -bottom-2 -right-4 bg-zinc-900 border border-zinc-800 text-[10px] uppercase font-bold tracking-widest text-zinc-300 px-3 py-1 rounded-md shadow-lg">
-          México
+        <!-- FIX: Badge dentro del flujo normal, sin -right que cause overflow en mobile -->
+        <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-zinc-900 border border-zinc-800 text-[10px] uppercase font-bold tracking-widest text-zinc-300 px-3 py-1 rounded-md shadow-lg whitespace-nowrap">
+          México 🇲🇽
         </div>
       </div>
 
-      <!-- Titular con la Animación de Color Solicitada -->
-      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 leading-tight max-w-3xl animate-white-cycle">
+      <!-- Titular -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight max-w-3xl animate-white-cycle px-2">
         Hola, soy Angel Luna
       </h1>
       
-      <!-- Rol -->
-      <p class="code-font text-lg sm:text-2xl text-zinc-400 mb-8 max-w-2xl font-light">
+      <!-- Rol — FIX MOBILE: font-size adaptable -->
+      <p class="code-font text-sm sm:text-lg lg:text-2xl text-zinc-400 mb-10 max-w-2xl font-light px-2 leading-relaxed">
         &lt;<span class="text-brand-500">desarrollador_web</span> /&gt; enfocado en crear soluciones eficientes, escalables y con un diseño impecable.
       </p>
 
-      <!-- Botones de Acción -->
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#proyectos" class="inline-flex items-center justify-center gap-2 text-zinc-950 bg-white px-8 py-3.5 rounded-xl font-semibold hover:bg-zinc-100 transition-all transform hover:-translate-y-1 shadow-lg shadow-white/5">
+      <!-- Botones de Acción — FIX MOBILE: siempre centrados y no se cortan -->
+      <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0">
+        <a href="#proyectos" class="hero-btn inline-flex items-center justify-center gap-2 text-zinc-950 bg-white px-8 py-3.5 rounded-xl font-semibold hover:bg-zinc-100 transition-all transform hover:-translate-y-1 shadow-lg shadow-white/5 w-full sm:w-auto">
           Explorar proyectos <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
-        
+        <a href="#contacto" class="hero-btn inline-flex items-center justify-center gap-2 text-white border border-zinc-700 px-8 py-3.5 rounded-xl font-semibold hover:border-brand-500 hover:text-brand-500 transition-all w-full sm:w-auto">
+          Contáctame
+        </a>
       </div>
-    </div>
-
-    <!-- Indicador de Scroll -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-500">
-      
     </div>
   </section>
 
 
   <!-- ================= SOBRE MÍ & EDUCACIÓN ================= -->
-  <section id="about_me" class="bg-zinc-900/40 border-y border-white/5 py-24 px-6 relative">
+  <section id="about_me" class="bg-zinc-900/40 border-y border-white/5 py-20 sm:py-24 px-4 sm:px-6 relative">
     <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
         
         <!-- Info Principal -->
         <div class="lg:col-span-7 flex flex-col justify-center">
           <span class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-3 block">Trayectoria</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6 tracking-tight">Sobre mí</h2>
           
-          <div class="space-y-6 text-zinc-400 text-sm sm:text-base leading-relaxed">
+          <div class="space-y-5 text-zinc-400 text-sm sm:text-base leading-relaxed">
             <p>
               Soy un desarrollador de software con experiencia en tecnologías modernas como <strong class="text-zinc-200 font-semibold">HTML, CSS, JavaScript, PHP y Java</strong>. Cuento con más de dos años de experiencia profesional diseñando y optimizando soluciones web funcionales que sigan las mejores prácticas y arquitecturas como MVC.
             </p>
@@ -202,7 +226,6 @@
           </div>
 
           <div class="mt-8">
-            <!-- Botón que activa el modal -->
             <button id="open-sobre-mi" class="inline-flex items-center gap-2 text-brand-500 hover:text-white text-sm font-semibold transition-colors">
               Leer más detalles de mi enfoque <i class="fa-solid fa-plus text-xs"></i>
             </button>
@@ -210,10 +233,10 @@
         </div>
 
         <!-- Educación / iParking -->
-        <div class="lg:col-span-5 bg-zinc-900/80 border border-zinc-800 p-8 rounded-2xl flex flex-col justify-between">
+        <div class="lg:col-span-5 bg-zinc-900/80 border border-zinc-800 p-6 sm:p-8 rounded-2xl flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">PROYECTO ACADÉMICO   </span>
+              <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Proyecto Académico</span>
               <span class="code-font text-[10px] text-zinc-500">2025</span>
             </div>
             
@@ -225,7 +248,6 @@
               Solución inteligente de gestión y reserva de estacionamientos enfocada en modularizar pensiones en la CDMX. Desarrollada para la Exposición de Proyectos UTN, enfocando optimización lógica e interfaz de usuario avanzada.
             </p>
 
-            <!-- Badges -->
             <div class="flex flex-wrap gap-2 mb-6">
               <span class="text-[10px] code-font font-medium bg-zinc-950 border border-zinc-800 text-zinc-300 px-2.5 py-1 rounded">PHP</span>
               <span class="text-[10px] code-font font-medium bg-zinc-950 border border-zinc-800 text-zinc-300 px-2.5 py-1 rounded">JavaScript</span>
@@ -246,20 +268,17 @@
 
 
   <!-- ================= MODAL: SOBRE MÍ DETALLES ================= -->
-  <div id="miModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-hidden="true" role="dialog">
+  <div id="miModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center">
-      <!-- Backdrop transparente oscuro con blur -->
-      <div class="fixed inset-0 bg-zinc-950/80 backdrop-blur-sm transition-opacity cerrar-modal"></div>
+      <div class="fixed inset-0 bg-zinc-950/80 backdrop-blur-sm transition-opacity cerrar-modal" aria-hidden="true"></div>
       
-      <!-- Contenedor del Modal -->
-      <div class="relative inline-block w-full max-w-lg p-8 overflow-hidden text-left align-middle bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl transition-all z-10">
-        <!-- Close button -->
-        <button class="absolute top-6 right-6 text-zinc-500 hover:text-white transition cerrar-modal" aria-label="Cerrar modal">
+      <div class="relative inline-block w-full max-w-lg p-6 sm:p-8 overflow-hidden text-left align-middle bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl transition-all z-10">
+        <button class="absolute top-5 right-5 text-zinc-500 hover:text-white transition cerrar-modal" aria-label="Cerrar modal">
           <i class="fa-solid fa-xmark text-lg"></i>
         </button>
 
         <span class="text-[10px] uppercase font-bold tracking-widest text-brand-500 block mb-2">Dominio Profesional</span>
-        <h3 class="text-xl font-bold text-white mb-4">
+        <h3 class="text-xl font-bold text-white mb-4 pr-8">
           WordPress, Estilo & Performance
         </h3>
         
@@ -283,74 +302,72 @@
 
 
   <!-- ================= STACK & HABILIDADES ================= -->
-  <section id="skills" class="bg-zinc-950 py-24 px-4 sm:px-6">
+  <section id="skills" class="bg-zinc-950 py-20 sm:py-24 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-zinc-900">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-zinc-900 gap-4">
         <div>
           <span class="text-xs font-semibold uppercase tracking-widest text-brand-500 mb-2 block">Mi Stack</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Habilidades & Tecnologías
           </h2>
         </div>
-        <p class="text-zinc-400 mt-4 md:mt-0 max-w-md text-sm sm:text-base font-light">
+        <p class="text-zinc-400 max-w-md text-sm sm:text-base font-light">
           Herramientas y arquitecturas que utilizo activamente para crear interfaces web de gran fluidez y rendimiento.
         </p>
       </div>
 
-      <!-- Grilla Asimétrica -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
         
         <!-- Frontend Principal -->
-        <div class="lg:col-span-2 bg-zinc-900/40 p-8 rounded-2xl border border-zinc-800 flex flex-col justify-between">
+        <div class="lg:col-span-2 bg-zinc-900/40 p-6 sm:p-8 rounded-2xl border border-zinc-800 flex flex-col justify-between">
           <div>
             <h3 class="text-lg font-bold text-white mb-1">Ecosistema Frontend</h3>
             <p class="text-xs text-zinc-500 mb-6">Creación de interfaces estructuradas, lógicas y totalmente interactivas.</p>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              <!-- React -->
+            <!-- FIX MOBILE: grid de 2 columnas en mobile, 3 en sm+ -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
               <div class="flex items-center gap-3 p-3.5 rounded-xl bg-sky-950/20 border border-sky-900/50 hover:bg-sky-950/30 transition">
-                <i class="fab fa-react text-2xl text-sky-400"></i>
+                <i class="fab fa-react text-2xl text-sky-400 flex-shrink-0"></i>
                 <span class="font-medium text-xs text-zinc-300">React</span>
               </div>
-              <!-- JavaScript -->
               <div class="flex items-center gap-3 p-3.5 rounded-xl bg-amber-950/20 border border-amber-900/50 hover:bg-amber-950/30 transition">
-                <i class="fab fa-js text-2xl text-amber-400"></i>
+                <i class="fab fa-js text-2xl text-amber-400 flex-shrink-0"></i>
                 <span class="font-medium text-xs text-zinc-300">JavaScript</span>
               </div>
-              <!-- Tailwind CSS -->
               <div class="flex items-center gap-3 p-3.5 rounded-xl bg-indigo-950/20 border border-indigo-900/50 hover:bg-indigo-950/30 transition">
-                <span class="text-xl text-indigo-400 font-extrabold">#</span>
+                <span class="text-xl text-indigo-400 font-extrabold flex-shrink-0">#</span>
                 <span class="font-medium text-xs text-zinc-300">Tailwind CSS</span>
               </div>
-              <!-- HTML5 -->
               <div class="flex items-center gap-3 p-3.5 rounded-xl bg-orange-950/20 border border-orange-900/50 hover:bg-orange-950/30 transition">
-                <i class="fab fa-html5 text-2xl text-orange-400"></i>
+                <i class="fab fa-html5 text-2xl text-orange-400 flex-shrink-0"></i>
                 <span class="font-medium text-xs text-zinc-300">HTML5</span>
               </div>
-              <!-- CSS3 -->
               <div class="flex items-center gap-3 p-3.5 rounded-xl bg-blue-950/20 border border-blue-900/50 hover:bg-blue-950/30 transition">
-                <i class="fab fa-css3-alt text-2xl text-blue-400"></i>
+                <i class="fab fa-css3-alt text-2xl text-blue-400 flex-shrink-0"></i>
                 <span class="font-medium text-xs text-zinc-300">CSS3</span>
+              </div>
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-zinc-800/40 border border-zinc-700/50 hover:bg-zinc-800/60 transition">
+                <i class="fab fa-php text-2xl text-purple-400 flex-shrink-0"></i>
+                <span class="font-medium text-xs text-zinc-300">PHP</span>
               </div>
             </div>
           </div>
           
-          <div class="mt-8 pt-4 border-t border-zinc-900 flex items-center justify-between text-xs text-zinc-500">
+          <div class="mt-8 pt-4 border-t border-zinc-900 flex items-center text-xs text-zinc-500">
             <span class="flex items-center gap-2">
-              <i class="fab fa-git-alt text-base text-orange-500"></i> Versionamiento ágil de proyectos usando <strong>Git</strong>
+              <i class="fab fa-git-alt text-base text-orange-500"></i> Versionamiento ágil con <strong class="text-zinc-400">Git & GitHub</strong>
             </span>
           </div>
         </div>
 
-        <!-- Backend, Gestión & CMS -->
-        <div class="bg-zinc-900/40 p-8 rounded-2xl border border-zinc-800 flex flex-col justify-between">
+        <!-- Backend & CMS -->
+        <div class="bg-zinc-900/40 p-6 sm:p-8 rounded-2xl border border-zinc-800 flex flex-col justify-between">
           <div>
             <h3 class="text-lg font-bold text-white mb-1">Backend & CMS</h3>
             <p class="text-xs text-zinc-500 mb-6">Modelado de bases de datos, lógica server-side y flujos dinámicos.</p>
             
             <div class="space-y-3">
-              <!-- Laravel -->
               <div class="flex items-center justify-between p-3.5 rounded-xl bg-red-950/10 border border-red-900/30 hover:border-red-800 transition">
                 <div class="flex items-center gap-3">
                   <i class="fab fa-laravel text-lg text-red-500"></i>
@@ -358,7 +375,6 @@
                 </div>
                 <span class="text-[9px] code-font font-bold bg-red-500/10 text-red-400 px-2 py-0.5 rounded-full border border-red-500/20">Framework</span>
               </div>
-              <!-- WordPress -->
               <div class="flex items-center justify-between p-3.5 rounded-xl bg-blue-950/10 border border-blue-900/30 hover:border-blue-800 transition">
                 <div class="flex items-center gap-3">
                   <i class="fab fa-wordpress text-lg text-blue-400"></i>
@@ -366,32 +382,39 @@
                 </div>
                 <span class="text-[9px] code-font font-bold bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded-full border border-blue-500/20">CMS</span>
               </div>
+              <div class="flex items-center justify-between p-3.5 rounded-xl bg-emerald-950/10 border border-emerald-900/30 hover:border-emerald-800 transition">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-database text-lg text-emerald-400"></i>
+                  <span class="font-medium text-xs text-zinc-300">MySQL</span>
+                </div>
+                <span class="text-[9px] code-font font-bold bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/20">DB</span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Estrategia y UX -->
-        <div class="lg:col-span-3 bg-gradient-to-r from-zinc-900 to-zinc-900/50 text-zinc-100 p-8 rounded-2xl border border-zinc-800 shadow-xl grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-          <div>
-            <h3 class="text-lg font-bold text-white mb-1">Estrategia & Dirección</h3>
-            <p class="text-xs text-zinc-500">Prácticas orientadas a la entrega ágil de valor real.</p>
-          </div>
-          
-          <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <!-- UI/UX -->
-            <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800">
-              <span class="text-[10px] code-font font-bold text-brand-500 block mb-1">01 / DISEÑO</span>
-              <span class="font-semibold text-xs text-zinc-200">UI / UX Estructural</span>
+        <div class="lg:col-span-3 bg-gradient-to-r from-zinc-900 to-zinc-900/50 text-zinc-100 p-6 sm:p-8 rounded-2xl border border-zinc-800 shadow-xl">
+          <!-- FIX MOBILE: cambia de grid a flex-col en mobile -->
+          <div class="flex flex-col sm:grid sm:grid-cols-3 gap-6 items-start sm:items-center">
+            <div>
+              <h3 class="text-lg font-bold text-white mb-1">Estrategia & Dirección</h3>
+              <p class="text-xs text-zinc-500">Prácticas orientadas a la entrega ágil de valor real.</p>
             </div>
-            <!-- SEO -->
-            <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800">
-              <span class="text-[10px] code-font font-bold text-emerald-400 block mb-1">02 / POSICIONAMIENTO</span>
-              <span class="font-semibold text-xs text-zinc-200">SEO Técnico Inicial</span>
-            </div>
-            <!-- Scrum -->
-            <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800">
-              <span class="text-[10px] code-font font-bold text-amber-400 block mb-1">03 / MARCO</span>
-              <span class="font-semibold text-xs text-zinc-200">Gestión Ágil (Scrum)</span>
+            
+            <div class="sm:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full">
+              <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800">
+                <span class="text-[10px] code-font font-bold text-brand-500 block mb-1">01 / DISEÑO</span>
+                <span class="font-semibold text-xs text-zinc-200">UI / UX Estructural</span>
+              </div>
+              <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800">
+                <span class="text-[10px] code-font font-bold text-emerald-400 block mb-1">02 / POSICIONAMIENTO</span>
+                <span class="font-semibold text-xs text-zinc-200">SEO Técnico Inicial</span>
+              </div>
+              <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800">
+                <span class="text-[10px] code-font font-bold text-amber-400 block mb-1">03 / MARCO</span>
+                <span class="font-semibold text-xs text-zinc-200">Gestión Ágil (Scrum)</span>
+              </div>
             </div>
           </div>
         </div>
@@ -402,72 +425,68 @@
 
 
   <!-- ================= SECCIÓN PROYECTOS ================= -->
-  <section id="proyectos" class="bg-zinc-900/20 py-24 px-6 border-t border-white/5 relative">
+  <section id="proyectos" class="bg-zinc-900/20 py-20 sm:py-24 px-4 sm:px-6 border-t border-white/5 relative">
     <div class="max-w-6xl mx-auto">
       
       <!-- Encabezado y Filtrado -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
         <div>
           <span class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-3 block">Portafolio</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Proyectos Realizados</h2>
         </div>
         
-        <!-- Filtros Dinámicos -->
-        <div class="flex flex-wrap gap-2 mt-6 md:mt-0 bg-zinc-900 p-1.5 rounded-xl border border-zinc-800/80">
-          <button onclick="filterProjects(event, 'all')" class="project-filter-btn px-4 py-2 text-xs font-semibold rounded-lg bg-white text-zinc-950 transition">
+        <!-- FIX MOBILE: Barra de filtros con scroll horizontal -->
+        <div class="filter-bar flex gap-2 bg-zinc-900 p-1.5 rounded-xl border border-zinc-800/80 w-full md:w-auto">
+          <button onclick="filterProjects(event, 'all')" class="project-filter-btn px-4 py-2 text-xs font-semibold rounded-lg bg-white text-zinc-950 transition whitespace-nowrap flex-shrink-0">
             Todos
           </button>
-          <button onclick="filterProjects(event, 'react')" class="project-filter-btn px-4 py-2 text-xs font-semibold rounded-lg text-zinc-400 hover:text-white transition">
+          <button onclick="filterProjects(event, 'react')" class="project-filter-btn px-4 py-2 text-xs font-semibold rounded-lg text-zinc-400 hover:text-white transition whitespace-nowrap flex-shrink-0">
             React / JS
           </button>
-          <button onclick="filterProjects(event, 'wordpress')" class="project-filter-btn px-4 py-2 text-xs font-semibold rounded-lg text-zinc-400 hover:text-white transition">
+          <button onclick="filterProjects(event, 'wordpress')" class="project-filter-btn px-4 py-2 text-xs font-semibold rounded-lg text-zinc-400 hover:text-white transition whitespace-nowrap flex-shrink-0">
             WordPress
           </button>
         </div>
       </div>
 
       <!-- Grid de Proyectos -->
-      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500">
+      <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 transition-all duration-500">
         
-        <!-- PROYECTO 1 -->
+        <!-- PROYECTO 1: SIMMSA -->
         <div class="project-card border border-brand-500/20 rounded-2xl bg-zinc-900/60 p-3 overflow-hidden flex flex-col justify-between group" data-tech="wordpress">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
-              <img src="simmsa.png" alt="Proyecto SIMMSA" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/2e4d68/ffffff?text=SIMMSA+Corp'" />
+              <img src="simmsa.png" alt="Proyecto SIMMSA" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/2e4d68/ffffff?text=SIMMSA+Corp'" />
               <div class="absolute top-3 left-3 bg-brand-600 text-[10px] font-bold uppercase tracking-wider text-white px-2.5 py-1 rounded-md shadow-md">
                 Destacado
               </div>
             </div>
-            
             <span class="text-[10px] code-font font-semibold text-brand-500 tracking-wider uppercase">Corporativo</span>
             <h3 class="text-lg font-bold text-white mt-1 group-hover:text-brand-500 transition-colors">SIMMSA</h3>
             <p class="text-zinc-400 text-xs leading-relaxed mt-2 mb-4">
               Sitio corporativo optimizado estructuralmente para captación calificada de prospectos y alta velocidad de despliegue.
             </p>
           </div>
-
           <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
             <span class="text-[10px] code-font text-zinc-500">WordPress & Elementor</span>
-            <button onclick="openDetailModal('SIMMSA', 'Sitio web desarrollado para una importante firma comercial, con el objetivo de optimizar la captación de prospectos de manera orgánica. El despliegue de desarrollo empleó WordPress optimizado con constructores y plugins customizados de alta respuesta.', 'https://simmsa.mx/')" class="text-xs font-semibold text-brand-500 hover:text-white transition flex items-center gap-1">
+            <button onclick="openDetailModal('SIMMSA', 'Sitio web desarrollado para una importante firma comercial, con el objetivo de optimizar la captación de prospectos de manera orgánica. El despliegue empleó WordPress optimizado con constructores y plugins customizados de alta respuesta.', 'https://simmsa.mx/')" class="text-xs font-semibold text-brand-500 hover:text-white transition flex items-center gap-1">
               Ver detalles <i class="fa-solid fa-chevron-right text-[10px]"></i>
             </button>
           </div>
         </div>
 
-        <!-- PROYECTO 2 -->
+        <!-- PROYECTO 2: The Computists -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="wordpress">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
-              <img src="thecomputists.png" alt="The Computists" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=The+Computists'" />
+              <img src="thecomputists.png" alt="The Computists" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=The+Computists'" />
             </div>
-            
             <span class="text-[10px] code-font font-semibold text-zinc-500 tracking-wider uppercase">Landing Page</span>
             <h3 class="text-lg font-bold text-white mt-1 group-hover:text-brand-500 transition-colors">The Computists</h3>
             <p class="text-zinc-400 text-xs leading-relaxed mt-2 mb-4">
               Sitio enfocado en servicios de tecnología e infraestructura con un diseño moderno, intuitivo y adaptado para móviles.
             </p>
           </div>
-
           <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
             <span class="text-[10px] code-font text-zinc-500">WordPress / T.I.</span>
             <button onclick="openDetailModal('The Computists', 'Una landing page elegante y moderna diseñada para una compañía de soluciones de TI. Enfocada en conversiones de servicios, estructurada óptimamente con un diseño totalmente responsivo.', '#')" class="text-xs font-semibold text-brand-500 hover:text-white transition flex items-center gap-1">
@@ -476,20 +495,18 @@
           </div>
         </div>
 
-        <!-- PROYECTO 3 -->
+        <!-- PROYECTO 3: Q.M.D -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="react">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
-              <img src="QMD.jpeg" alt="Q.M.D" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=Q.M.D'" />
+              <img src="QMD.jpeg" alt="Q.M.D" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=Q.M.D'" />
             </div>
-            
             <span class="text-[10px] code-font font-semibold text-zinc-500 tracking-wider uppercase">Web App / Frontend</span>
             <h3 class="text-lg font-bold text-white mt-1 group-hover:text-brand-500 transition-colors">Q.M.D</h3>
             <p class="text-zinc-400 text-xs leading-relaxed mt-2 mb-4">
               Diseño de interfaz dinámico y veloz orientado a captación del sector entretenimiento.
             </p>
           </div>
-
           <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
             <span class="text-[10px] code-font text-zinc-500">React & Tailwind</span>
             <button onclick="openDetailModal('Q.M.D', 'Estructura interactiva de alta fidelidad desarrollada con arquitectura SPA dinámica. Rendimiento superior y transiciones fluidas diseñadas para potenciar el compromiso del usuario.', '#')" class="text-xs font-semibold text-brand-500 hover:text-white transition flex items-center gap-1">
@@ -498,42 +515,40 @@
           </div>
         </div>
 
-        <!---Proyecto 3.1-->
+        <!-- PROYECTO 3.1: Foster Sterm -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="react">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
-              <img src="fostern.png" alt="Q.M.D" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=fostern'" />
+              <img src="fostern.png" alt="Foster Sterm" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=Foster+Sterm'" />
             </div>
-            
             <span class="text-[10px] code-font font-semibold text-zinc-500 tracking-wider uppercase">Web App / Frontend</span>
+            <!-- FIX: título del modal era 'Q.M.D', corregido a 'Foster Sterm' -->
             <h3 class="text-lg font-bold text-white mt-1 group-hover:text-brand-500 transition-colors">Foster Sterm</h3>
             <p class="text-zinc-400 text-xs leading-relaxed mt-2 mb-4">
-              Diseño de interfaz dinámico y veloz orientado a captación del sector médico y tecnologico.
+              Diseño de interfaz dinámico y veloz orientado a captación del sector médico y tecnológico.
             </p>
           </div>
-
           <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
             <span class="text-[10px] code-font text-zinc-500">React & Tailwind</span>
-            <button onclick="openDetailModal('Q.M.D', 'Estructura interactiva de alta fidelidad desarrollada con arquitectura SPA dinámica. Rendimiento superior y transiciones fluidas diseñadas para potenciar el compromiso del usuario.', '#')" class="text-xs font-semibold text-brand-500 hover:text-white transition flex items-center gap-1">
+            <!-- FIX BUG: el título del modal decía 'Q.M.D' en vez de 'Foster Sterm' -->
+            <button onclick="openDetailModal('Foster Sterm', 'Interfaz de alta fidelidad desarrollada con arquitectura SPA orientada al sector médico y tecnológico. Diseño responsivo y transiciones fluidas para una experiencia de usuario premium.', '#')" class="text-xs font-semibold text-brand-500 hover:text-white transition flex items-center gap-1">
               Ver detalles <i class="fa-solid fa-chevron-right text-[10px]"></i>
             </button>
           </div>
         </div>
 
-        <!-- PROYECTO 4 -->
+        <!-- PROYECTO 4: Mrack -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="wordpress">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
-              <img src="mrack.png" alt="Mrack" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=Mrack'" />
+              <img src="mrack.png" alt="Mrack" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=Mrack'" />
             </div>
-            
             <span class="text-[10px] code-font font-semibold text-zinc-500 tracking-wider uppercase">E-Commerce</span>
             <h3 class="text-lg font-bold text-white mt-1 group-hover:text-brand-500 transition-colors">Mrack</h3>
             <p class="text-zinc-400 text-xs leading-relaxed mt-2 mb-4">
               Arquitectura robusta de portal corporativo de entretenimiento y consultoría comercial de alto impacto.
             </p>
           </div>
-
           <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
             <span class="text-[10px] code-font text-zinc-500">WordPress Robusto</span>
             <button onclick="openDetailModal('Mrack', 'Sitio estructurado para visualización de servicios a gran escala con capacidades modulares excelentes y administración nativa limpia para el cliente.', '#')" class="text-xs font-semibold text-brand-500 hover:text-white transition flex items-center gap-1">
@@ -542,20 +557,18 @@
           </div>
         </div>
 
-        <!-- PROYECTO 5 -->
+        <!-- PROYECTO 5: Heaven Suites -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="wordpress">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
-              <img src="heavensuites.png" alt="Heaven Suites" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=Heaven+Suites'" />
+              <img src="heavensuites.png" alt="Heaven Suites" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=Heaven+Suites'" />
             </div>
-            
             <span class="text-[10px] code-font font-semibold text-zinc-500 tracking-wider uppercase">Landing Page</span>
             <h3 class="text-lg font-bold text-white mt-1 group-hover:text-brand-500 transition-colors">Heaven Suites</h3>
             <p class="text-zinc-400 text-xs leading-relaxed mt-2 mb-4">
               Sitio comercial enfocado en optimizar conversiones dentro del sector premium de zonas hoteleras y turísticas.
             </p>
           </div>
-
           <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
             <span class="text-[10px] code-font text-zinc-500">WordPress & Elementor</span>
             <button onclick="openDetailModal('Heaven Suites', 'Diseño visual envolvente estructurado bajo las mejores prácticas de experiencia de usuario (UX) hotelera, acelerando los ratios de reservación directa.', '#')" class="text-xs font-semibold text-brand-500 hover:text-white transition flex items-center gap-1">
@@ -564,20 +577,18 @@
           </div>
         </div>
 
-        <!-- PROYECTO 6 -->
+        <!-- PROYECTO 6: Bioingredientes -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="wordpress">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
-              <img src="bioingredientes.png" alt="Bioingredientes" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=Bioingredientes'" />
+              <img src="bioingredientes.png" alt="Bioingredientes" class="w-full h-48 object-cover rounded-xl transition-all duration-500 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18181b/ffffff?text=Bioingredientes'" />
             </div>
-            
             <span class="text-[10px] code-font font-semibold text-zinc-500 tracking-wider uppercase">Sitio Corporativo</span>
             <h3 class="text-lg font-bold text-white mt-1 group-hover:text-brand-500 transition-colors">Bioingredientes</h3>
             <p class="text-zinc-400 text-xs leading-relaxed mt-2 mb-4">
               Portal enfocado en captación corporativa, optimización SEO y distribución ágil de información técnica.
             </p>
           </div>
-
           <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
             <span class="text-[10px] code-font text-zinc-500">WordPress & SEO</span>
             <button onclick="openDetailModal('Bioingredientes', 'Desarrollo de catálogo dinámico optimizado estructuralmente para motores de búsqueda, logrando posicionamiento inicial inmediato para sectores industriales.', '#')" class="text-xs font-semibold text-brand-500 hover:text-white transition flex items-center gap-1">
@@ -587,24 +598,22 @@
         </div>
 
       </div>
-
     </div>
   </section>
 
 
-  <!-- ================= MODAL: DETALLES DE PROYECTO (Dinámico y Seguro) ================= -->
-  <div id="modaldetail" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-hidden="true" role="dialog">
+  <!-- ================= MODAL: DETALLES DE PROYECTO ================= -->
+  <div id="modaldetail" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center">
-      <div class="fixed inset-0 bg-zinc-950/85 backdrop-blur-sm transition-opacity cerrar-modal"></div>
+      <div class="fixed inset-0 bg-zinc-950/85 backdrop-blur-sm transition-opacity cerrar-modal" aria-hidden="true"></div>
       
-      <div class="relative inline-block w-full max-w-xl p-8 overflow-hidden text-left align-middle bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl transition-all z-10">
-        <!-- Close button -->
-        <button class="absolute top-6 right-6 text-zinc-500 hover:text-white transition cerrar-modal" aria-label="Cerrar modal">
+      <div class="relative inline-block w-full max-w-xl p-6 sm:p-8 overflow-hidden text-left align-middle bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl transition-all z-10">
+        <button class="absolute top-5 right-5 text-zinc-500 hover:text-white transition cerrar-modal" aria-label="Cerrar modal">
           <i class="fa-solid fa-xmark text-lg"></i>
         </button>
 
         <span class="text-[10px] uppercase font-bold tracking-widest text-brand-500 block mb-2">Análisis de Proyecto</span>
-        <h3 id="modal-project-title" class="text-2xl font-bold text-white mb-4">
+        <h3 id="modal-project-title" class="text-xl sm:text-2xl font-bold text-white mb-4 pr-8">
           Cargando Título...
         </h3>
         
@@ -614,12 +623,11 @@
           </p>
         </div>
 
-        <div class="flex justify-between items-center pt-6 border-t border-zinc-800">
-          <button type="button" class="px-5 py-2.5 text-xs font-semibold text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 rounded-xl transition cerrar-modal">
+        <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 pt-6 border-t border-zinc-800">
+          <button type="button" class="px-5 py-2.5 text-xs font-semibold text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 rounded-xl transition cerrar-modal order-2 sm:order-1">
             Cerrar
           </button>
-          
-          <a id="modal-project-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-zinc-950 bg-white hover:bg-brand-500 hover:text-white rounded-xl transition-all duration-300">
+          <a id="modal-project-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-bold text-zinc-950 bg-white hover:bg-brand-500 hover:text-white rounded-xl transition-all duration-300 order-1 sm:order-2">
             Visitar Sitio Web <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
@@ -629,36 +637,31 @@
 
 
   <!-- ================= CONTACTO & FOOTER ================= -->
-  <footer id="contacto" class="bg-zinc-950 pt-24 pb-12 px-6 border-t border-zinc-900 relative">
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[150px] bg-brand-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+  <footer id="contacto" class="bg-zinc-950 pt-20 sm:pt-24 pb-12 px-4 sm:px-6 border-t border-zinc-900 relative">
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[600px] h-[150px] bg-brand-500/5 blur-[80px] rounded-full pointer-events-none"></div>
 
-    <div class="max-w-4xl mx-auto flex flex-col items-center space-y-12 text-center relative z-10">
+    <div class="max-w-4xl mx-auto flex flex-col items-center space-y-10 sm:space-y-12 text-center relative z-10">
 
-      <div class="space-y-4 max-w-xl">
+      <div class="space-y-4 max-w-xl px-2">
         <span class="text-xs font-bold uppercase tracking-widest text-brand-500">¿Listo para comenzar?</span>
         <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Construyamos algo asombroso</h2>
-       
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 items-center justify-center w-full">
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/angel-luna-dev-wp/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-zinc-900 hover:bg-brand-500/10 border border-zinc-800 hover:border-brand-500/30 px-6 py-3.5 rounded-xl transition-all duration-300 w-full sm:w-auto">
-          <i class="fab fa-linkedin text-brand-500 text-lg"></i>
+      <!-- FIX MOBILE: Botones de contacto al 100% de ancho en móvil -->
+      <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-center w-full px-2 sm:px-0">
+        <a href="https://www.linkedin.com/in/angel-luna-dev-wp/" target="_blank" rel="noopener noreferrer" class="contact-link flex items-center justify-center gap-3 bg-zinc-900 hover:bg-brand-500/10 border border-zinc-800 hover:border-brand-500/30 px-6 py-3.5 rounded-xl transition-all duration-300 sm:w-auto">
+          <i class="fab fa-linkedin text-brand-500 text-lg flex-shrink-0"></i>
           <span class="text-xs font-semibold text-zinc-200">Ángel Luna en LinkedIn</span>
         </a>
-        <!-- GitHub -->
-        <a href="https://github.com/chaiLuna2003" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-zinc-900 hover:bg-white/5 border border-zinc-800 hover:border-zinc-700 px-6 py-3.5 rounded-xl transition-all duration-300 w-full sm:w-auto">
-          <i class="fab fa-github text-white text-lg"></i>
+        <a href="https://github.com/chaiLuna2003" target="_blank" rel="noopener noreferrer" class="contact-link flex items-center justify-center gap-3 bg-zinc-900 hover:bg-white/5 border border-zinc-800 hover:border-zinc-700 px-6 py-3.5 rounded-xl transition-all duration-300 sm:w-auto">
+          <i class="fab fa-github text-white text-lg flex-shrink-0"></i>
           <span class="text-xs font-semibold text-zinc-200">@chaiLuna2003</span>
         </a>
       </div>
 
-      <div class="w-full border-t border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-        <div>
-          © 2026 Angel Luna · Todos los derechos reservados.
-        </div>
+      <div class="w-full border-t border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-500">
+        <div>© 2026 Angel Luna · Todos los derechos reservados.</div>
         <div class="flex items-center gap-2 text-zinc-600">
-          
           <span>Actualización: 02/06/2026</span>
         </div>
       </div>
@@ -667,30 +670,40 @@
   </footer>
 
 
-  <!-- ================= SCRIPTS DE CONTROL CORREGIDOS ================= -->
+  <!-- ================= SCRIPTS ================= -->
   <script>
-    // --- Solución del Bug del Menú Móvil ---
+    // --- Menú Móvil ---
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
 
     if (menuBtn && mobileMenu) {
       menuBtn.addEventListener('click', (e) => {
         e.stopPropagation();
+        const isOpen = !mobileMenu.classList.contains('hidden');
         mobileMenu.classList.toggle('hidden');
-      });
-
-      // Cerrar menú móvil al hacer click fuera de él
-      document.addEventListener('click', (e) => {
-        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-          mobileMenu.classList.add('hidden');
+        // FIX: actualizar aria-expanded e icono al abrir/cerrar
+        menuBtn.setAttribute('aria-expanded', String(!isOpen));
+        if (menuIcon) {
+          menuIcon.className = isOpen ? 'fa-solid fa-bars-staggered' : 'fa-solid fa-xmark';
         }
       });
 
-      // Cerrar menú móvil al hacer click en los enlaces internos
-      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-      mobileLinks.forEach(link => {
+      // Cerrar al hacer click fuera
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          if (menuIcon) menuIcon.className = 'fa-solid fa-bars-staggered';
+        }
+      });
+
+      // Cerrar al hacer click en los enlaces del menú
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
         link.addEventListener('click', () => {
           mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          if (menuIcon) menuIcon.className = 'fa-solid fa-bars-staggered';
         });
       });
     }
@@ -699,36 +712,32 @@
     const mainNav = document.getElementById('main-nav');
     if (mainNav) {
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          mainNav.classList.add('nav-scrolled', 'shadow-lg');
-        } else {
-          mainNav.classList.remove('nav-scrolled', 'shadow-lg');
-        }
-      });
+        mainNav.classList.toggle('nav-scrolled', window.scrollY > 50);
+        mainNav.classList.toggle('shadow-lg', window.scrollY > 50);
+      }, { passive: true });
     }
 
-    // --- Controladores Unificados de Modales (Evita fallos y colisiones) ---
+    // --- Control unificado de Modales ---
     const modalSobreMi = document.getElementById('miModal');
     const modalDetail = document.getElementById('modaldetail');
     const triggerSobreMi = document.getElementById('open-sobre-mi');
-    const closeButtons = document.querySelectorAll('.cerrar-modal');
 
-    // Función segura para cerrar todos los modales abiertos
     function closeAllModals() {
-      if (modalSobreMi) modalSobreMi.classList.add('hidden');
-      if (modalDetail) modalDetail.classList.add('hidden');
-      document.body.style.overflow = ''; // Restaurar scroll del body
+      if (modalSobreMi) { modalSobreMi.classList.add('hidden'); modalSobreMi.setAttribute('aria-hidden', 'true'); }
+      if (modalDetail) { modalDetail.classList.add('hidden'); modalDetail.setAttribute('aria-hidden', 'true'); }
+      document.body.style.overflow = '';
     }
 
     if (triggerSobreMi && modalSobreMi) {
       triggerSobreMi.addEventListener('click', (e) => {
         e.stopPropagation();
         modalSobreMi.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Detener scroll de fondo
+        modalSobreMi.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
       });
     }
 
-    closeButtons.forEach(btn => {
+    document.querySelectorAll('.cerrar-modal').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -736,14 +745,11 @@
       });
     });
 
-    // Cerrar modales con la tecla Escape
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeAllModals();
-      }
+      if (e.key === 'Escape') closeAllModals();
     });
 
-    // --- Carga de Contenido en Modal Detalle de Proyectos ---
+    // --- Modal Detalle de Proyectos ---
     function openDetailModal(title, description, link) {
       const modalTitle = document.getElementById('modal-project-title');
       const modalDesc = document.getElementById('modal-project-description');
@@ -751,56 +757,52 @@
 
       if (modalTitle) modalTitle.textContent = title;
       if (modalDesc) modalDesc.textContent = description;
-      
+
       if (modalLink) {
         if (link && link !== '#') {
           modalLink.href = link;
           modalLink.classList.remove('hidden');
         } else {
+          modalLink.href = '#';
           modalLink.classList.add('hidden');
         }
       }
 
       if (modalDetail) {
         modalDetail.classList.remove('hidden');
+        modalDetail.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
       }
     }
 
-    // --- Corregido Bug del Filtro Dinámico (Compatibilidad Estricta) ---
+    // --- Filtro Dinámico de Proyectos ---
     function filterProjects(event, category) {
       if (event) {
         event.preventDefault();
-        
-        // Corregido el bug del target dinámico en navegadores estrictos
-        const filterBtns = document.querySelectorAll('.project-filter-btn');
-        filterBtns.forEach(btn => {
+        document.querySelectorAll('.project-filter-btn').forEach(btn => {
           btn.classList.remove('bg-white', 'text-zinc-950');
           btn.classList.add('text-zinc-400', 'hover:text-white');
         });
-
-        const clickedBtn = event.currentTarget;
-        if (clickedBtn) {
-          clickedBtn.classList.remove('text-zinc-400', 'hover:text-white');
-          clickedBtn.classList.add('bg-white', 'text-zinc-950');
+        const clicked = event.currentTarget;
+        if (clicked) {
+          clicked.classList.remove('text-zinc-400', 'hover:text-white');
+          clicked.classList.add('bg-white', 'text-zinc-950');
         }
       }
 
-      const cards = document.querySelectorAll('.project-card');
-      cards.forEach(card => {
-        const techAttr = card.getAttribute('data-tech') || '';
-        if (category === 'all' || techAttr.includes(category)) {
+      document.querySelectorAll('.project-card').forEach(card => {
+        const tech = card.getAttribute('data-tech') || '';
+        if (category === 'all' || tech.includes(category)) {
           card.classList.remove('hidden');
-          setTimeout(() => {
+          // FIX: usar requestAnimationFrame para garantizar la transición tras unhide
+          requestAnimationFrame(() => {
             card.style.opacity = '1';
             card.style.transform = 'scale(1)';
-          }, 50);
+          });
         } else {
           card.style.opacity = '0';
           card.style.transform = 'scale(0.95)';
-          setTimeout(() => {
-            card.classList.add('hidden');
-          }, 300);
+          setTimeout(() => card.classList.add('hidden'), 300);
         }
       });
     }
