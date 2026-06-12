@@ -75,18 +75,15 @@
 
 <body class="bg-zinc-950 text-zinc-100 overflow-x-hidden">
 
-  <!-- ================= HEADER / NAVIGATION ================= -->
   <header id="main-nav" class="fixed top-4 left-4 right-4 z-50 rounded-2xl border border-white/5 bg-zinc-950/40 backdrop-blur-md transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
 
-      <!-- Logo -->
       <a href="#" class="flex items-center gap-2 group flex-shrink-0">
         <span class="code-font text-brand-500 font-bold text-xl">&lt;</span>
         <span class="text-white text-base sm:text-lg font-bold tracking-tight group-hover:text-brand-500 transition-colors">Angel Luna</span>
         <span class="code-font text-brand-500 font-bold text-xl">/&gt;</span>
       </a>
 
-      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="#about_me" class="text-zinc-400 hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-brand-500 after:transition-all">About</a>
         <a href="#skills" class="text-zinc-400 hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-brand-500 after:transition-all">Stack</a>
@@ -94,13 +91,11 @@
         <a href="#contact" class="text-zinc-400 hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-brand-500 after:transition-all">Contact</a>
       </nav>
 
-      <!-- Desktop CTA -->
       <div class="hidden md:flex items-center gap-4">
         <a href="../index.html" class="text-xs font-semibold px-3 py-1.5 rounded-lg border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition">ES</a>
         <a href="#contact" class="text-xs font-semibold bg-white text-zinc-950 px-4 py-2 rounded-xl hover:bg-brand-500 hover:text-white transition-all duration-300">Let's talk</a>
       </div>
 
-      <!-- Mobile: ES + hamburger -->
       <div class="flex md:hidden items-center gap-3">
         <a href="../index.html" class="text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-zinc-800 text-zinc-400 hover:text-white transition">ES</a>
         <button id="menu-btn" aria-label="Open menu" aria-expanded="false" class="text-zinc-400 hover:text-white text-2xl focus:outline-none transition p-1">
@@ -109,7 +104,6 @@
       </div>
     </div>
 
-    <!-- Mobile Dropdown -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-zinc-950/98 px-6 py-6 rounded-b-2xl space-y-1">
       <a href="#about_me" class="flex items-center gap-3 text-zinc-300 hover:text-brand-500 font-medium py-3 px-3 rounded-xl hover:bg-brand-500/5 transition-all mobile-nav-link">
         <i class="fa-solid fa-user text-xs w-4 text-center text-brand-500/60"></i> About me
@@ -132,20 +126,17 @@
   </header>
 
 
-  <!-- ================= HERO SECTION ================= -->
   <section class="relative min-h-screen flex flex-col justify-center items-center bg-zinc-950 pt-28 pb-16 px-4 sm:px-6 overflow-hidden">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none"></div>
     <div class="absolute bottom-10 right-10 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-sky-500/5 blur-[100px] rounded-full pointer-events-none"></div>
 
     <div class="max-w-4xl mx-auto text-center flex flex-col items-center relative z-10 w-full">
 
-      <!-- Status Badge -->
       <div class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/20 text-brand-100 px-4 py-1.5 rounded-full text-xs font-medium mb-8">
         <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse flex-shrink-0"></span>
         <span>Available for new projects</span>
       </div>
 
-      <!-- Avatar -->
       <div class="avatar-wrapper mb-10">
         <div class="absolute inset-0 bg-brand-500 rounded-full blur-xl opacity-20 transition-opacity duration-500"></div>
         <div class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full p-[2px] bg-gradient-to-tr from-brand-500 via-sky-400 to-transparent">
@@ -156,17 +147,14 @@
         </div>
       </div>
 
-      <!-- Headline -->
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight max-w-3xl animate-white-cycle px-2">
         Hi, I'm Angel Luna
       </h1>
 
-      <!-- Role -->
       <p class="code-font text-sm sm:text-lg lg:text-2xl text-zinc-400 mb-10 max-w-2xl font-light px-2 leading-relaxed">
         &lt;<span class="text-brand-500">web_developer</span> /&gt; focused on building efficient, scalable solutions with impeccable design.
       </p>
 
-      <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0">
         <a href="#projects" class="hero-btn inline-flex items-center justify-center gap-2 text-zinc-950 bg-white px-8 py-3.5 rounded-xl font-semibold hover:bg-zinc-100 transition-all transform hover:-translate-y-1 shadow-lg shadow-white/5 w-full sm:w-auto">
           Explore projects <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -179,12 +167,10 @@
   </section>
 
 
-  <!-- ================= ABOUT ME ================= -->
   <section id="about_me" class="bg-zinc-900/40 border-y border-white/5 py-20 sm:py-24 px-4 sm:px-6 relative">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
 
-        <!-- Main Info -->
         <div class="lg:col-span-7 flex flex-col justify-center">
           <span class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-3 block">Background</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6 tracking-tight">About me</h2>
@@ -208,7 +194,6 @@
           </div>
         </div>
 
-        <!-- Academic Project Card -->
         <div class="lg:col-span-5 bg-zinc-900/80 border border-zinc-800 p-6 sm:p-8 rounded-2xl flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
@@ -243,7 +228,6 @@
   </section>
 
 
-  <!-- ================= MODAL: ABOUT ME DETAILS ================= -->
   <div id="miModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center">
       <div class="fixed inset-0 bg-zinc-950/80 backdrop-blur-sm transition-opacity cerrar-modal" aria-hidden="true"></div>
@@ -277,7 +261,6 @@
   </div>
 
 
-  <!-- ================= STACK & SKILLS ================= -->
   <section id="skills" class="bg-zinc-950 py-20 sm:py-24 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
 
@@ -295,7 +278,6 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
 
-        <!-- Frontend -->
         <div class="lg:col-span-2 bg-zinc-900/40 p-6 sm:p-8 rounded-2xl border border-zinc-800 flex flex-col justify-between">
           <div>
             <h3 class="text-lg font-bold text-white mb-1">Frontend Ecosystem</h3>
@@ -336,7 +318,6 @@
           </div>
         </div>
 
-        <!-- Backend & CMS -->
         <div class="bg-zinc-900/40 p-6 sm:p-8 rounded-2xl border border-zinc-800 flex flex-col justify-between">
           <div>
             <h3 class="text-lg font-bold text-white mb-1">Backend & CMS</h3>
@@ -368,7 +349,6 @@
           </div>
         </div>
 
-        <!-- Strategy & Direction -->
         <div class="lg:col-span-3 bg-gradient-to-r from-zinc-900 to-zinc-900/50 text-zinc-100 p-6 sm:p-8 rounded-2xl border border-zinc-800 shadow-xl">
           <div class="flex flex-col sm:grid sm:grid-cols-3 gap-6 items-start sm:items-center">
             <div>
@@ -398,11 +378,9 @@
   </section>
 
 
-  <!-- ================= PROJECTS ================= -->
   <section id="projects" class="bg-zinc-900/20 py-20 sm:py-24 px-4 sm:px-6 border-t border-white/5 relative">
     <div class="max-w-6xl mx-auto">
 
-      <!-- Header & Filters -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
         <div>
           <span class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-3 block">Portfolio</span>
@@ -422,10 +400,8 @@
         </div>
       </div>
 
-      <!-- Projects Grid -->
       <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 transition-all duration-500">
 
-        <!-- PROJECT 1: SIMMSA -->
         <div class="project-card border border-brand-500/20 rounded-2xl bg-zinc-900/60 p-3 overflow-hidden flex flex-col justify-between group" data-tech="wordpress">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
@@ -448,7 +424,6 @@
           </div>
         </div>
 
-        <!-- PROJECT 2: The Computists -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="wordpress">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
@@ -468,7 +443,6 @@
           </div>
         </div>
 
-        <!-- PROJECT 3: Q.M.D -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="react">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
@@ -488,7 +462,6 @@
           </div>
         </div>
 
-        <!-- PROJECT 3.1: Foster Sterm -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="react">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
@@ -508,7 +481,6 @@
           </div>
         </div>
 
-        <!-- PROJECT 4: Mrack -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="wordpress">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
@@ -528,7 +500,6 @@
           </div>
         </div>
 
-        <!-- PROJECT 5: Heaven Suites -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="wordpress">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
@@ -548,7 +519,6 @@
           </div>
         </div>
 
-        <!-- PROJECT 6: Bioingredientes -->
         <div class="project-card border border-zinc-800 rounded-2xl bg-zinc-900/20 p-3 overflow-hidden flex flex-col justify-between group" data-tech="wordpress">
           <div>
             <div class="relative overflow-hidden rounded-xl mb-4">
@@ -573,7 +543,6 @@
   </section>
 
 
-  <!-- ================= MODAL: PROJECT DETAILS ================= -->
   <div id="modaldetail" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center">
       <div class="fixed inset-0 bg-zinc-950/85 backdrop-blur-sm transition-opacity cerrar-modal" aria-hidden="true"></div>
@@ -605,7 +574,6 @@
   </div>
 
 
-  <!-- ================= CONTACT & FOOTER ================= -->
   <footer id="contact" class="bg-zinc-950 pt-20 sm:pt-24 pb-12 px-4 sm:px-6 border-t border-zinc-900 relative">
     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[600px] h-[150px] bg-brand-500/5 blur-[80px] rounded-full pointer-events-none"></div>
 
@@ -636,7 +604,6 @@
   </footer>
 
 
-  <!-- ================= SCRIPTS ================= -->
   <script>
     // --- Mobile Menu ---
     const menuBtn = document.getElementById('menu-btn');
