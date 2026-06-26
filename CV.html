@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CV | Angel Luna</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              500: '#6366f1',
+              600: '#4f46e5',
+              950: '#090514'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #090514;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 4px;
+    }
+
+    .glass {
+      background: rgba(24, 24, 27, 0.6);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+
+<body class="bg-zinc-950 text-zinc-100 overflow-x-hidden">
+
+  <!-- HEADER -->
+
+  <header
+    class="sticky top-0 z-50 border-b border-white/5 glass">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <a href="index.html"
+        class="flex items-center gap-2">
+
+        <span class="text-brand-500 font-bold text-xl">&lt;</span>
+
+        <span class="font-bold tracking-tight text-white">
+          Angel Luna
+        </span>
+
+        <span class="text-brand-500 font-bold text-xl">/&gt;</span>
+      </a>
+
+      <a href="index.html"
+        class="text-sm font-semibold border border-zinc-700 px-4 py-2 rounded-xl hover:border-brand-500 hover:text-brand-500 transition">
+        Volver al Portfolio
+      </a>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="relative py-24 px-6 overflow-hidden">
+
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-500/10 blur-[140px] rounded-full">
+    </div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+
+      <div class="grid lg:grid-cols-3 gap-10 items-center">
+
+        <div class="flex justify-center lg:justify-start">
+
+          <div
+            class="w-52 h-52 rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl">
+
+            <img
+              src="AngelLuna.png"
+              alt="Angel Luna"
+              class="w-full h-full object-cover">
+
+          </div>
+
+        </div>
+
+        <div class="lg:col-span-2">
+
+          <span
+            class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-brand-500 font-bold mb-5">
+
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+
+            Disponible para proyectos
+          </span>
+
+          <h1
+            class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-5">
+            Angel Gabriel González Luna
+          </h1>
+
+          <p
+            class="text-zinc-400 text-lg leading-relaxed max-w-3xl mb-8">
+
+            Desarrollador Web Multiplataforma especializado en frontend,
+            WordPress y arquitecturas modernas. Más de dos años creando
+            soluciones web optimizadas, escalables y enfocadas en experiencia
+            de usuario.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+
+            <a href="mailto:angelunagzl@outlook.com"
+              class="bg-white text-zinc-950 px-6 py-3 rounded-xl font-semibold hover:bg-brand-500 hover:text-white transition">
+              Contactar
+            </a>
+
+            <a href="https://github.com/chaiLuna2003"
+              target="_blank"
+              class="border border-zinc-700 px-6 py-3 rounded-xl font-semibold hover:border-brand-500 hover:text-brand-500 transition">
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GRID -->
+
+  <section class="px-6 pb-24">
+
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8">
+
+      <!-- LEFT -->
+
+      <div class="space-y-8">
+
+        <!-- CONTACT -->
+
+        <div class="glass border border-zinc-800 rounded-3xl p-7">
+
+          <h2 class="text-xl font-bold mb-6">
+            Contacto
+          </h2>
+
+          <div class="space-y-5 text-sm">
+
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-envelope text-brand-500"></i>
+              <span class="text-zinc-300">
+                angelunagzl@outlook.com
+              </span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-phone text-brand-500"></i>
+              <span class="text-zinc-300">
+                56 3164 4039
+              </span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <i class="fa-brands fa-linkedin text-brand-500"></i>
+              <span class="text-zinc-300">
+                angel-luna-dev-wp
+              </span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <i class="fa-brands fa-github text-brand-500"></i>
+              <span class="text-zinc-300">
+                chaiLuna2003
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SKILLS -->
+
+        <div class="glass border border-zinc-800 rounded-3xl p-7">
+
+          <h2 class="text-xl font-bold mb-6">
+            Tecnologías
+          </h2>
+
+          <div class="flex flex-wrap gap-3">
+
+            <span class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-sm">
+              HTML
+            </span>
+
+            <span class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-sm">
+              CSS
+            </span>
+
+            <span class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-sm">
+              JavaScript
+            </span>
+
+            <span class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-sm">
+              PHP
+            </span>
+
+            <span class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-sm">
+              React
+            </span>
+
+            <span class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-sm">
+              Laravel
+            </span>
+
+            <span class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-sm">
+              Tailwind
+            </span>
+
+            <span class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-sm">
+              MySQL
+            </span>
+
+            <span class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-sm">
+              WordPress
+            </span>
+
+            <span class="px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-sm">
+              Git
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- SOFT SKILLS -->
+
+        <div class="glass border border-zinc-800 rounded-3xl p-7">
+
+          <h2 class="text-xl font-bold mb-6">
+            Habilidades
+          </h2>
+
+          <div class="space-y-4 text-sm text-zinc-300">
+
+            <div>• Proactividad</div>
+            <div>• Adaptabilidad</div>
+            <div>• Resiliencia</div>
+            <div>• Análisis crítico</div>
+            <div>• Trabajo en equipo</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+
+      <div class="lg:col-span-2 space-y-8">
+
+        <!-- PROFILE -->
+
+        <div class="glass border border-zinc-800 rounded-3xl p-8">
+
+          <h2 class="text-2xl font-bold mb-6">
+            Perfil Profesional
+          </h2>
+
+          <p class="text-zinc-400 leading-relaxed">
+            Desarrollador Web Multiplataforma con experiencia en desarrollo
+            frontend, mantenimiento web, WordPress y optimización de rendimiento.
+            He trabajado en proyectos corporativos, landing pages y soluciones
+            dinámicas aplicando buenas prácticas de programación, metodologías
+            ágiles y arquitectura escalable.
+          </p>
+
+        </div>
+
+        <!-- EXPERIENCE -->
+
+        <div class="glass border border-zinc-800 rounded-3xl p-8">
+
+          <h2 class="text-2xl font-bold mb-8">
+            Experiencia Profesional
+          </h2>
+
+          <div class="space-y-10">
+
+            <div>
+
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
+
+                <h3 class="text-xl font-bold text-white">
+                  ABCW — Desarrollador Web
+                </h3>
+
+                <span class="text-sm text-brand-500">
+                  Feb 2025 — Jan 2026
+                </span>
+
+              </div>
+
+              <p class="text-zinc-400 leading-relaxed text-sm">
+                Desarrollo y mantenimiento de sitios web en WordPress,
+                migraciones manuales y mediante plugins, optimización de
+                rendimiento, personalización de temas y colaboración directa
+                con clientes para levantamiento de requerimientos.
+              </p>
+
+            </div>
+
+            <div>
+
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
+
+                <h3 class="text-xl font-bold text-white">
+                  The Computists — Desarrollador de Software
+                </h3>
+
+                <span class="text-sm text-brand-500">
+                  Jun 2023 — Jan 2024
+                </span>
+
+              </div>
+
+              <p class="text-zinc-400 leading-relaxed text-sm">
+                Resolución de conflictos mediante Git, documentación técnica,
+                pruebas funcionales y personalización de dashboards usando PHP,
+                MySQL, HTML, CSS y JavaScript.
+              </p>
+
+            </div>
+
+            <div>
+
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
+
+                <h3 class="text-xl font-bold text-white">
+                  Técnico en Mantenimiento
+                </h3>
+
+                <span class="text-sm text-brand-500">
+                  Mar 2026 — Apr 2026
+                </span>
+
+              </div>
+
+              <p class="text-zinc-400 leading-relaxed text-sm">
+                Mantenimiento preventivo y correctivo de equipos de cómputo,
+                diagnóstico de hardware/software, instalación de sistemas y
+                soporte técnico.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- EDUCATION -->
+
+        <div class="glass border border-zinc-800 rounded-3xl p-8">
+
+          <h2 class="text-2xl font-bold mb-8">
+            Educación
+          </h2>
+
+          <div>
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
+
+              <h3 class="text-xl font-bold text-white">
+                Universidad Tecnológica de Nezahualcóyotl
+              </h3>
+
+              <span class="text-sm text-brand-500">
+                2023 — 2025
+              </span>
+
+            </div>
+
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              TSU en Desarrollo de Software Multiplataforma.
+              Formación en desarrollo web, metodologías ágiles,
+              arquitectura MVC, bases de datos y desarrollo fullstack.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- LANGUAGES -->
+
+        <div class="glass border border-zinc-800 rounded-3xl p-8">
+
+          <h2 class="text-2xl font-bold mb-6">
+            Idiomas
+          </h2>
+
+          <div class="flex items-center gap-4">
+
+            <div class="px-4 py-3 rounded-xl border border-zinc-800 bg-zinc-900">
+              <span class="font-semibold text-white">
+                Inglés B1
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+
+</html>
