@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Vista conceptual de Longev360</title>
+  <desc id="desc">Landing page de bienestar y longevidad con una estética orgánica contemporánea.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071f1b"/>
+      <stop offset=".55" stop-color="#164e3d"/>
+      <stop offset="1" stop-color="#65a30d"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9f99d"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="26" stdDeviation="28" flood-color="#001a0e" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" rx="36" fill="url(#bg)"/>
+  <circle cx="1050" cy="40" r="280" fill="#bef264" opacity=".12"/>
+  <circle cx="80" cy="650" r="250" fill="#34d399" opacity=".12"/>
+  <g transform="translate(75 62)">
+    <circle cx="27" cy="27" r="26" fill="none" stroke="#bef264" stroke-width="4"/>
+    <path d="M15 31c10-18 24-18 29-22-2 19-11 30-29 22z" fill="#bef264"/>
+    <text x="76" y="34" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="33" font-weight="700">Longev360</text>
+    <text x="76" y="62" fill="#d9f99d" font-family="Inter,Arial,sans-serif" font-size="17">Bienestar con una visión integral</text>
+  </g>
+  <g transform="translate(76 170)" filter="url(#shadow)">
+    <rect width="1048" height="438" rx="27" fill="#f7fee7"/>
+    <rect width="1048" height="70" rx="27" fill="#fff"/>
+    <circle cx="35" cy="35" r="12" fill="#65a30d"/>
+    <rect x="58" y="27" width="90" height="16" rx="8" fill="#244e3a"/>
+    <g fill="#587064">
+      <rect x="640" y="29" width="62" height="12" rx="6"/>
+      <rect x="730" y="29" width="72" height="12" rx="6"/>
+      <rect x="830" y="29" width="52" height="12" rx="6"/>
+    </g>
+    <rect x="916" y="20" width="102" height="31" rx="15.5" fill="#365314"/>
+    <g transform="translate(58 112)">
+      <rect x="0" y="0" width="530" height="278" rx="24" fill="#ecfccb"/>
+      <text x="38" y="60" fill="#365314" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2">SALUD · EQUILIBRIO · FUTURO</text>
+      <text x="38" y="112" fill="#153e2d" font-family="Inter,Arial,sans-serif" font-size="40" font-weight="800">Vive mejor.</text>
+      <text x="38" y="158" fill="#153e2d" font-family="Inter,Arial,sans-serif" font-size="40" font-weight="800">Vive más.</text>
+      <text x="38" y="198" fill="#5f7469" font-family="Inter,Arial,sans-serif" font-size="15">Una experiencia digital para descubrir</text>
+      <text x="38" y="221" fill="#5f7469" font-family="Inter,Arial,sans-serif" font-size="15">hábitos de bienestar sostenibles.</text>
+      <rect x="38" y="243" width="148" height="42" rx="21" fill="#365314"/>
+      <text x="112" y="269" text-anchor="middle" fill="#f7fee7" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700">DESCUBRIR MÁS</text>
+    </g>
+    <g transform="translate(624 100)">
+      <circle cx="182" cy="146" r="143" fill="url(#orb)"/>
+      <circle cx="182" cy="146" r="112" fill="#efffd8" opacity=".24"/>
+      <path d="M179 242c-62-48-70-119-24-178 12 42 48 58 81 86-6 42-26 73-57 92z" fill="#14532d" opacity=".84"/>
+      <path d="M184 236c11-61 44-108 101-137-3 67-32 119-101 137z" fill="#f7fee7" opacity=".9"/>
+      <circle cx="89" cy="71" r="8" fill="#f7fee7" opacity=".75"/>
+      <circle cx="311" cy="185" r="12" fill="#d9f99d" opacity=".65"/>
+    </g>
+  </g>
+</svg>
